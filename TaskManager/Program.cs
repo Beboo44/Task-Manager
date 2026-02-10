@@ -48,6 +48,8 @@ namespace TaskManager
                 options.LoginPath = "/Account/Login";
                 options.AccessDeniedPath = "/Account/AccessDenied";
                 options.SlidingExpiration = true;
+                options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Require HTTPS
+                options.Cookie.SameSite = SameSiteMode.Strict; // CSRF protection
             });
 
             // Add AutoMapper
@@ -66,13 +68,20 @@ namespace TaskManager
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            // Add security headers
+            builder.Services.AddHsts(options =>
+            {
+                options.Preload = true;
+                options.IncludeSubDomains = true;
+                options.MaxAge = TimeSpan.FromDays(365);
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
             else
@@ -82,6 +91,37 @@ namespace TaskManager
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            // Add security headers middleware
+            app.Use(async (context, next) =>
+            {
+                // Prevent clickjacking
+                context.Response.Headers.Add("X-Frame-Options", "DENY");
+                
+                // Prevent MIME-sniffing
+                context.Response.Headers.Add("X-Content-Type-Options", "nosniff");
+                
+                // Enable XSS protection
+                context.Response.Headers.Add("X-XSS-Protection", "1; mode=block");
+                
+                // Content Security Policy - strict but allows Bootstrap Icons and CDN
+                context.Response.Headers.Add("Content-Security-Policy", 
+                    "default-src 'self'; " +
+                    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; " +
+                    "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; " +
+                    "font-src 'self' https://cdn.jsdelivr.net data:; " +
+                    "img-src 'self' data: https:; " +
+                    "connect-src 'self'");
+                
+                // Referrer Policy
+                context.Response.Headers.Add("Referrer-Policy", "strict-origin-when-cross-origin");
+                
+                // Permissions Policy (formerly Feature Policy)
+                context.Response.Headers.Add("Permissions-Policy", 
+                    "geolocation=(), microphone=(), camera=()");
+
+                await next();
+            });
 
             app.UseRouting();
 

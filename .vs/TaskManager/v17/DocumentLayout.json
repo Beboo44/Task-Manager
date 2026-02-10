@@ -413,6 +413,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\TIME_PICKER_QUICK_REFERENCE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TIME_PICKER_QUICK_REFERENCE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\GOOGLE_SAFE_BROWSING_FIX.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GOOGLE_SAFE_BROWSING_FIX.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\SECURITY_HEADERS_TEST_GUIDE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SECURITY_HEADERS_TEST_GUIDE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -438,8 +446,7 @@
               "RelativeToolTip": "TIME_PICKER_QUICK_REFERENCE.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T12:56:16.593Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T12:56:16.593Z"
             },
             {
               "$type": "Document",
@@ -451,8 +458,7 @@
               "RelativeToolTip": "DEADLINE_TIME_PICKER_IMPROVEMENT.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAKkBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T12:55:47.097Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T12:55:47.097Z"
             },
             {
               "$type": "Document",
@@ -462,9 +468,35 @@
               "RelativeDocumentMoniker": "TaskManager\\Program.cs",
               "ToolTip": "D:\\SilverKey\\TaskManager\\TaskManager\\Program.cs",
               "RelativeToolTip": "TaskManager\\Program.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAQwKcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-04T14:30:14.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 103,
+              "Title": "GOOGLE_SAFE_BROWSING_FIX.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\GOOGLE_SAFE_BROWSING_FIX.md",
+              "RelativeDocumentMoniker": "GOOGLE_SAFE_BROWSING_FIX.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\GOOGLE_SAFE_BROWSING_FIX.md",
+              "RelativeToolTip": "GOOGLE_SAFE_BROWSING_FIX.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T17:10:13.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 104,
+              "Title": "SECURITY_HEADERS_TEST_GUIDE.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\SECURITY_HEADERS_TEST_GUIDE.md",
+              "RelativeDocumentMoniker": "SECURITY_HEADERS_TEST_GUIDE.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\SECURITY_HEADERS_TEST_GUIDE.md",
+              "RelativeToolTip": "SECURITY_HEADERS_TEST_GUIDE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T17:10:58.006Z",
               "EditorCaption": ""
             },
             {
@@ -477,8 +509,7 @@
               "RelativeToolTip": "DEPLOYMENT_ERROR_FIX.md",
               "ViewState": "AgIAAKIAAAAAAAAAAAAAAKQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T12:05:49.383Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T12:05:49.383Z"
             },
             {
               "$type": "Document",
@@ -490,8 +521,7 @@
               "RelativeToolTip": "DATABASE_VERIFICATION_GUIDE.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAOQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T12:35:44.298Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T12:35:44.298Z"
             },
             {
               "$type": "Document",
@@ -503,8 +533,7 @@
               "RelativeToolTip": "EMERGENCY_TROUBLESHOOTING.md",
               "ViewState": "AgIAAG8BAAAAAAAAAIBJwHEBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T12:40:42.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T12:40:42.563Z"
             },
             {
               "$type": "Document",
@@ -516,8 +545,7 @@
               "RelativeToolTip": "FIREWALL_DENY_PUBLIC_FIX.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAL4BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T12:18:59.984Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T12:18:59.984Z"
             },
             {
               "$type": "Document",
@@ -529,8 +557,7 @@
               "RelativeToolTip": "QUERY_EDITOR_AUTH_CONFUSION.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAIsBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T12:15:32.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T12:15:32.701Z"
             },
             {
               "$type": "Document",
@@ -542,8 +569,7 @@
               "RelativeToolTip": "HOW_TO_UPDATE_DEPLOYED_APP.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAK4CAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T12:00:33.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T12:00:33.781Z"
             },
             {
               "$type": "Document",
@@ -555,8 +581,7 @@
               "RelativeToolTip": "GITHUB_ACTIONS_VS_VISUAL_STUDIO.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACoCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T11:48:09.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T11:48:09.059Z"
             },
             {
               "$type": "Document",
@@ -568,8 +593,7 @@
               "RelativeToolTip": "DEPLOYMENT_NOW_STEP_BY_STEP.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAP8BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T11:41:27.262Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T11:41:27.262Z"
             },
             {
               "$type": "Document",
@@ -581,8 +605,7 @@
               "RelativeToolTip": "WHICH_PROJECT_TO_PUBLISH.md",
               "ViewState": "AgIAACMBAAAAAAAAAAAAAGQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T11:31:06.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T11:31:06.708Z"
             },
             {
               "$type": "Document",
@@ -594,8 +617,7 @@
               "RelativeToolTip": "AZURE_AD_PASSWORDLESS_SETUP.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADoBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T11:22:18.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T11:22:18.007Z"
             },
             {
               "$type": "Document",
@@ -607,8 +629,7 @@
               "RelativeToolTip": "QUICK_DEPLOYMENT_CHECKLIST.md",
               "ViewState": "AgIAABgAAAAAAAAAAAAAAC0AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T09:14:54.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T09:14:54.937Z"
             },
             {
               "$type": "Document",
@@ -620,8 +641,7 @@
               "RelativeToolTip": "TaskManager.DataAccess\\Data\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T13:31:14.542Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T13:31:14.542Z"
             },
             {
               "$type": "Document",
@@ -633,8 +653,7 @@
               "RelativeToolTip": "CONNECTION_STRING_UPDATED.md",
               "ViewState": "AgIAAC0AAAAAAAAAAAAAAGQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T11:15:42.761Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T11:15:42.761Z"
             },
             {
               "$type": "Document",
@@ -646,8 +665,7 @@
               "RelativeToolTip": "TaskManager\\appsettings.Production.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-10T09:11:58.947Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T09:11:58.947Z"
             },
             {
               "$type": "Document",
@@ -659,8 +677,7 @@
               "RelativeToolTip": "TaskManager.Business\\Services\\RecommendationService.cs",
               "ViewState": "AgIAAFsAAAAAAAAAAAAkwA8AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T13:38:28.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T13:38:28.526Z"
             },
             {
               "$type": "Document",
@@ -672,8 +689,7 @@
               "RelativeToolTip": ".gitignore",
               "ViewState": "AgIAAEgAAAAAAAAAAAAAAJIAAAAAAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG/SURBVDhPrZRNTgIxFMerDIaEhHgU97JxwUKGGaNeQJdyCY0XUBDWGhg4AB\u002BuvQk7OQCRFTP1fXWmMxUMCT94ee177eu/LVQdFK31kTSJ0WgEIa0SMJ2A6QTHcF9iicQqlYpa/6zv2\u002B2HD5nuEkWR/l4udRzHZBtjGzFor1YrPR6P9WKx0MNhpN96vTuZThyLJ1AJLK/iJFFxjBanBsXIozqkWq2qev1c1Wq19063e0ZBwBNP4JaQ6WRC/i8ajQb5wWBAvnxyghpOqQPkC8L5IEEQKjgxaqOTFsCd65tb6nmlkur1\u002BxwXCgX58KfT7QptwvCK52wrSLcJvtUKOABkQ6HFXwbGsmMRBkchzpjNphLZDSrEn5G1qnsp\u002BPEtheloXouRnXDTTjhb5tXmeyg0IgzuliHp\u002By0OANbiOCDXp1IYo3mMUxBT8/mMA/8QhGH6ZzC4Zwi5ZqoQB9M3h62I/\u002B/SAQpniBmtPvdQyGeYUdgyX8pl05eIBSxmTzQYEYbc42AuJQWLGJNQEcrJG4A4BTHneSW2sqfKOyybkxXMPbAvrx3IsyLzkPJFmUcWYtDntjG6lIvnp8cvKXNIlPoFvstpJRlQPIAAAAAASUVORK5CYII=",
-              "WhenOpened": "2026-02-10T09:12:22.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T09:12:22.889Z"
             },
             {
               "$type": "Document",
@@ -685,8 +701,7 @@
               "RelativeToolTip": "DOCKER_EXPLAINED.md",
               "ViewState": "AgIAAGsBAAAAAAAAAAAAAJoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T09:19:50.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T09:19:50.013Z"
             },
             {
               "$type": "Document",
@@ -698,8 +713,7 @@
               "RelativeToolTip": "PRODUCTION_DEPLOYMENT_GUIDE.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUDAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T09:14:12.277Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T09:14:12.277Z"
             },
             {
               "$type": "Document",
@@ -711,8 +725,7 @@
               "RelativeToolTip": "READY_TO_DEPLOY_SUMMARY.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAANABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-10T09:16:45.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T09:16:45.31Z"
             },
             {
               "$type": "Document",
@@ -724,8 +737,7 @@
               "RelativeToolTip": "TaskManager\\Views\\Dashboard\\Index.cshtml",
               "ViewState": "AgIAALkBAAAAAAAAAAAswOABAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-09T12:39:55.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T12:39:55.967Z"
             },
             {
               "$type": "Document",
@@ -737,8 +749,7 @@
               "RelativeToolTip": "TaskManager\\web.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2026-02-10T09:12:35.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-10T09:12:35.783Z"
             },
             {
               "$type": "Document",
@@ -1313,8 +1324,7 @@
               "RelativeToolTip": "TaskManager\\appsettings.Development.json",
               "ViewState": "AgIAAAsAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-04T14:27:28.641Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T14:27:28.641Z"
             },
             {
               "$type": "Document",
@@ -1590,8 +1600,7 @@
               "RelativeToolTip": "TaskManager\\Views\\Task\\Edit.cshtml",
               "ViewState": "AgIAAMIAAAAAAAAAAABRwMUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T13:41:57.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T13:41:57.42Z"
             },
             {
               "$type": "Document",
@@ -1603,8 +1612,7 @@
               "RelativeToolTip": "TaskManager\\Views\\Task\\Create.cshtml",
               "ViewState": "AgIAAMAAAAAAAAAAAABRwMMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T13:41:49.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T13:41:49.674Z"
             },
             {
               "$type": "Document",
