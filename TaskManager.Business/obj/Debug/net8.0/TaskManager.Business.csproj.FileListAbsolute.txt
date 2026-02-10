@@ -13,3 +13,4 @@ D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\TaskManager.Busin
 D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\refint\TaskManager.Business.dll
 D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\TaskManager.Business.pdb
 D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\ref\TaskManager.Business.dll
+D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\TaskManager.Business.sourcelink.json

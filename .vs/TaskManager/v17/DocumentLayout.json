@@ -3,6 +3,62 @@
   "WorkspaceRootPath": "D:\\SilverKey\\TaskManager\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|d:\\silverkey\\taskmanager\\taskmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|solutionrelative:taskmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\DEPLOYMENT_ERROR_FIX.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DEPLOYMENT_ERROR_FIX.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\HOW_TO_UPDATE_DEPLOYED_APP.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HOW_TO_UPDATE_DEPLOYED_APP.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\FIREWALL_DENY_PUBLIC_FIX.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FIREWALL_DENY_PUBLIC_FIX.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\QUERY_EDITOR_AUTH_CONFUSION.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QUERY_EDITOR_AUTH_CONFUSION.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\WHICH_PROJECT_TO_PUBLISH.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WHICH_PROJECT_TO_PUBLISH.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\QUICK_DEPLOYMENT_CHECKLIST.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QUICK_DEPLOYMENT_CHECKLIST.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\AZURE_AD_PASSWORDLESS_SETUP.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:AZURE_AD_PASSWORDLESS_SETUP.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{668D9B49-8C86-4AAF-9592-F0AA43FA198E}|TaskManager.DataAccess\\TaskManager.DataAccess.csproj|d:\\silverkey\\taskmanager\\taskmanager.dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{668D9B49-8C86-4AAF-9592-F0AA43FA198E}|TaskManager.DataAccess\\TaskManager.DataAccess.csproj|solutionrelative:taskmanager.dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|d:\\silverkey\\taskmanager\\taskmanager\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|solutionrelative:taskmanager\\appsettings.production.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\CONNECTION_STRING_UPDATED.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CONNECTION_STRING_UPDATED.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\DOCKER_EXPLAINED.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DOCKER_EXPLAINED.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC38548A-33A6-439A-9329-D34805ADB57B}|TaskManager.Business\\TaskManager.Business.csproj|d:\\silverkey\\taskmanager\\taskmanager.business\\services\\recommendationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC38548A-33A6-439A-9329-D34805ADB57B}|TaskManager.Business\\TaskManager.Business.csproj|solutionrelative:taskmanager.business\\services\\recommendationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|d:\\silverkey\\taskmanager\\taskmanager\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|solutionrelative:taskmanager\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -25,10 +81,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|d:\\silverkey\\taskmanager\\taskmanager\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|solutionrelative:taskmanager\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC38548A-33A6-439A-9329-D34805ADB57B}|TaskManager.Business\\TaskManager.Business.csproj|d:\\silverkey\\taskmanager\\taskmanager.business\\services\\recommendationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC38548A-33A6-439A-9329-D34805ADB57B}|TaskManager.Business\\TaskManager.Business.csproj|solutionrelative:taskmanager.business\\services\\recommendationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{668D9B49-8C86-4AAF-9592-F0AA43FA198E}|TaskManager.DataAccess\\TaskManager.DataAccess.csproj|d:\\silverkey\\taskmanager\\taskmanager.dataaccess\\migrations\\updatetaskstatusdata.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
@@ -91,20 +143,12 @@
       "RelativeMoniker": "D:0:0:{EC38548A-33A6-439A-9329-D34805ADB57B}|TaskManager.Business\\TaskManager.Business.csproj|solutionrelative:taskmanager.business\\dtos\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|d:\\silverkey\\taskmanager\\taskmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|solutionrelative:taskmanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{668D9B49-8C86-4AAF-9592-F0AA43FA198E}|TaskManager.DataAccess\\TaskManager.DataAccess.csproj|d:\\silverkey\\taskmanager\\taskmanager.dataaccess\\migrations\\20260204143304_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{668D9B49-8C86-4AAF-9592-F0AA43FA198E}|TaskManager.DataAccess\\TaskManager.DataAccess.csproj|solutionrelative:taskmanager.dataaccess\\migrations\\20260204143304_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|d:\\silverkey\\taskmanager\\taskmanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|solutionrelative:taskmanager\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{668D9B49-8C86-4AAF-9592-F0AA43FA198E}|TaskManager.DataAccess\\TaskManager.DataAccess.csproj|d:\\silverkey\\taskmanager\\taskmanager.dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{668D9B49-8C86-4AAF-9592-F0AA43FA198E}|TaskManager.DataAccess\\TaskManager.DataAccess.csproj|solutionrelative:taskmanager.dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{668D9B49-8C86-4AAF-9592-F0AA43FA198E}|TaskManager.DataAccess\\TaskManager.DataAccess.csproj|d:\\silverkey\\taskmanager\\taskmanager.dataaccess\\repositories\\itaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -333,6 +377,42 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\COMPLETED_TASKS_IMPROVEMENTS.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:COMPLETED_TASKS_IMPROVEMENTS.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|d:\\silverkey\\taskmanager\\taskmanager\\web.config||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{069A332E-A637-4298-84DE-56B87DBB1351}|TaskManager\\TaskManager.csproj|solutionrelative:taskmanager\\web.config||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\PRODUCTION_DEPLOYMENT_GUIDE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PRODUCTION_DEPLOYMENT_GUIDE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\READY_TO_DEPLOY_SUMMARY.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:READY_TO_DEPLOY_SUMMARY.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\DEPLOYMENT_NOW_STEP_BY_STEP.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DEPLOYMENT_NOW_STEP_BY_STEP.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\GITHUB_ACTIONS_VS_VISUAL_STUDIO.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GITHUB_ACTIONS_VS_VISUAL_STUDIO.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\DATABASE_VERIFICATION_GUIDE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DATABASE_VERIFICATION_GUIDE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\EMERGENCY_TROUBLESHOOTING.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EMERGENCY_TROUBLESHOOTING.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\DEADLINE_TIME_PICKER_IMPROVEMENT.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DEADLINE_TIME_PICKER_IMPROVEMENT.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\SilverKey\\TaskManager\\TIME_PICKER_QUICK_REFERENCE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TIME_PICKER_QUICK_REFERENCE.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -342,7 +422,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 225,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -350,7 +430,293 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 102,
+              "Title": "TIME_PICKER_QUICK_REFERENCE.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TIME_PICKER_QUICK_REFERENCE.md",
+              "RelativeDocumentMoniker": "TIME_PICKER_QUICK_REFERENCE.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\TIME_PICKER_QUICK_REFERENCE.md",
+              "RelativeToolTip": "TIME_PICKER_QUICK_REFERENCE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T12:56:16.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 101,
+              "Title": "DEADLINE_TIME_PICKER_IMPROVEMENT.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\DEADLINE_TIME_PICKER_IMPROVEMENT.md",
+              "RelativeDocumentMoniker": "DEADLINE_TIME_PICKER_IMPROVEMENT.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\DEADLINE_TIME_PICKER_IMPROVEMENT.md",
+              "RelativeToolTip": "DEADLINE_TIME_PICKER_IMPROVEMENT.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKkBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T12:55:47.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Program.cs",
+              "RelativeDocumentMoniker": "TaskManager\\Program.cs",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\TaskManager\\Program.cs",
+              "RelativeToolTip": "TaskManager\\Program.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T14:30:14.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DEPLOYMENT_ERROR_FIX.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\DEPLOYMENT_ERROR_FIX.md",
+              "RelativeDocumentMoniker": "DEPLOYMENT_ERROR_FIX.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\DEPLOYMENT_ERROR_FIX.md",
+              "RelativeToolTip": "DEPLOYMENT_ERROR_FIX.md",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAAKQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T12:05:49.383Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 99,
+              "Title": "DATABASE_VERIFICATION_GUIDE.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\DATABASE_VERIFICATION_GUIDE.md",
+              "RelativeDocumentMoniker": "DATABASE_VERIFICATION_GUIDE.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\DATABASE_VERIFICATION_GUIDE.md",
+              "RelativeToolTip": "DATABASE_VERIFICATION_GUIDE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T12:35:44.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 100,
+              "Title": "EMERGENCY_TROUBLESHOOTING.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\EMERGENCY_TROUBLESHOOTING.md",
+              "RelativeDocumentMoniker": "EMERGENCY_TROUBLESHOOTING.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\EMERGENCY_TROUBLESHOOTING.md",
+              "RelativeToolTip": "EMERGENCY_TROUBLESHOOTING.md",
+              "ViewState": "AgIAAG8BAAAAAAAAAIBJwHEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T12:40:42.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FIREWALL_DENY_PUBLIC_FIX.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\FIREWALL_DENY_PUBLIC_FIX.md",
+              "RelativeDocumentMoniker": "FIREWALL_DENY_PUBLIC_FIX.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\FIREWALL_DENY_PUBLIC_FIX.md",
+              "RelativeToolTip": "FIREWALL_DENY_PUBLIC_FIX.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAL4BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T12:18:59.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "QUERY_EDITOR_AUTH_CONFUSION.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\QUERY_EDITOR_AUTH_CONFUSION.md",
+              "RelativeDocumentMoniker": "QUERY_EDITOR_AUTH_CONFUSION.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\QUERY_EDITOR_AUTH_CONFUSION.md",
+              "RelativeToolTip": "QUERY_EDITOR_AUTH_CONFUSION.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T12:15:32.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HOW_TO_UPDATE_DEPLOYED_APP.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\HOW_TO_UPDATE_DEPLOYED_APP.md",
+              "RelativeDocumentMoniker": "HOW_TO_UPDATE_DEPLOYED_APP.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\HOW_TO_UPDATE_DEPLOYED_APP.md",
+              "RelativeToolTip": "HOW_TO_UPDATE_DEPLOYED_APP.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAK4CAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T12:00:33.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 98,
+              "Title": "GITHUB_ACTIONS_VS_VISUAL_STUDIO.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\GITHUB_ACTIONS_VS_VISUAL_STUDIO.md",
+              "RelativeDocumentMoniker": "GITHUB_ACTIONS_VS_VISUAL_STUDIO.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\GITHUB_ACTIONS_VS_VISUAL_STUDIO.md",
+              "RelativeToolTip": "GITHUB_ACTIONS_VS_VISUAL_STUDIO.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T11:48:09.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 97,
+              "Title": "DEPLOYMENT_NOW_STEP_BY_STEP.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\DEPLOYMENT_NOW_STEP_BY_STEP.md",
+              "RelativeDocumentMoniker": "DEPLOYMENT_NOW_STEP_BY_STEP.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\DEPLOYMENT_NOW_STEP_BY_STEP.md",
+              "RelativeToolTip": "DEPLOYMENT_NOW_STEP_BY_STEP.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAP8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T11:41:27.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WHICH_PROJECT_TO_PUBLISH.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\WHICH_PROJECT_TO_PUBLISH.md",
+              "RelativeDocumentMoniker": "WHICH_PROJECT_TO_PUBLISH.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\WHICH_PROJECT_TO_PUBLISH.md",
+              "RelativeToolTip": "WHICH_PROJECT_TO_PUBLISH.md",
+              "ViewState": "AgIAACMBAAAAAAAAAAAAAGQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T11:31:06.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AZURE_AD_PASSWORDLESS_SETUP.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\AZURE_AD_PASSWORDLESS_SETUP.md",
+              "RelativeDocumentMoniker": "AZURE_AD_PASSWORDLESS_SETUP.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\AZURE_AD_PASSWORDLESS_SETUP.md",
+              "RelativeToolTip": "AZURE_AD_PASSWORDLESS_SETUP.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T11:22:18.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "QUICK_DEPLOYMENT_CHECKLIST.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\QUICK_DEPLOYMENT_CHECKLIST.md",
+              "RelativeDocumentMoniker": "QUICK_DEPLOYMENT_CHECKLIST.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\QUICK_DEPLOYMENT_CHECKLIST.md",
+              "RelativeToolTip": "QUICK_DEPLOYMENT_CHECKLIST.md",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T09:14:54.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "TaskManager.DataAccess\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "TaskManager.DataAccess\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T13:31:14.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CONNECTION_STRING_UPDATED.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\CONNECTION_STRING_UPDATED.md",
+              "RelativeDocumentMoniker": "CONNECTION_STRING_UPDATED.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\CONNECTION_STRING_UPDATED.md",
+              "RelativeToolTip": "CONNECTION_STRING_UPDATED.md",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAGQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T11:15:42.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.Production.json",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\appsettings.Production.json",
+              "RelativeDocumentMoniker": "TaskManager\\appsettings.Production.json",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\TaskManager\\appsettings.Production.json",
+              "RelativeToolTip": "TaskManager\\appsettings.Production.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-10T09:11:58.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RecommendationService.cs",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\Services\\RecommendationService.cs",
+              "RelativeDocumentMoniker": "TaskManager.Business\\Services\\RecommendationService.cs",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\Services\\RecommendationService.cs",
+              "RelativeToolTip": "TaskManager.Business\\Services\\RecommendationService.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAkwA8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T13:38:28.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": ".gitignore",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAJIAAAAAAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG/SURBVDhPrZRNTgIxFMerDIaEhHgU97JxwUKGGaNeQJdyCY0XUBDWGhg4AB\u002BuvQk7OQCRFTP1fXWmMxUMCT94ee177eu/LVQdFK31kTSJ0WgEIa0SMJ2A6QTHcF9iicQqlYpa/6zv2\u002B2HD5nuEkWR/l4udRzHZBtjGzFor1YrPR6P9WKx0MNhpN96vTuZThyLJ1AJLK/iJFFxjBanBsXIozqkWq2qev1c1Wq19063e0ZBwBNP4JaQ6WRC/i8ajQb5wWBAvnxyghpOqQPkC8L5IEEQKjgxaqOTFsCd65tb6nmlkur1\u002BxwXCgX58KfT7QptwvCK52wrSLcJvtUKOABkQ6HFXwbGsmMRBkchzpjNphLZDSrEn5G1qnsp\u002BPEtheloXouRnXDTTjhb5tXmeyg0IgzuliHp\u002By0OANbiOCDXp1IYo3mMUxBT8/mMA/8QhGH6ZzC4Zwi5ZqoQB9M3h62I/\u002B/SAQpniBmtPvdQyGeYUdgyX8pl05eIBSxmTzQYEYbc42AuJQWLGJNQEcrJG4A4BTHneSW2sqfKOyybkxXMPbAvrx3IsyLzkPJFmUcWYtDntjG6lIvnp8cvKXNIlPoFvstpJRlQPIAAAAAASUVORK5CYII=",
+              "WhenOpened": "2026-02-10T09:12:22.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DOCKER_EXPLAINED.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\DOCKER_EXPLAINED.md",
+              "RelativeDocumentMoniker": "DOCKER_EXPLAINED.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\DOCKER_EXPLAINED.md",
+              "RelativeToolTip": "DOCKER_EXPLAINED.md",
+              "ViewState": "AgIAAGsBAAAAAAAAAAAAAJoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T09:19:50.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 95,
+              "Title": "PRODUCTION_DEPLOYMENT_GUIDE.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\PRODUCTION_DEPLOYMENT_GUIDE.md",
+              "RelativeDocumentMoniker": "PRODUCTION_DEPLOYMENT_GUIDE.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\PRODUCTION_DEPLOYMENT_GUIDE.md",
+              "RelativeToolTip": "PRODUCTION_DEPLOYMENT_GUIDE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T09:14:12.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 96,
+              "Title": "READY_TO_DEPLOY_SUMMARY.md",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\READY_TO_DEPLOY_SUMMARY.md",
+              "RelativeDocumentMoniker": "READY_TO_DEPLOY_SUMMARY.md",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\READY_TO_DEPLOY_SUMMARY.md",
+              "RelativeToolTip": "READY_TO_DEPLOY_SUMMARY.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-02-10T09:16:45.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Dashboard\\Index.cshtml",
@@ -363,19 +729,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RecommendationService.cs",
-              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\Services\\RecommendationService.cs",
-              "RelativeDocumentMoniker": "TaskManager.Business\\Services\\RecommendationService.cs",
-              "ToolTip": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\Services\\RecommendationService.cs",
-              "RelativeToolTip": "TaskManager.Business\\Services\\RecommendationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T13:38:28.526Z"
+              "DocumentIndex": 94,
+              "Title": "web.config",
+              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\web.config",
+              "RelativeDocumentMoniker": "TaskManager\\web.config",
+              "ToolTip": "D:\\SilverKey\\TaskManager\\TaskManager\\web.config",
+              "RelativeToolTip": "TaskManager\\web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-02-10T09:12:35.783Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 17,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Category\\Index.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Category\\Index.cshtml",
@@ -383,12 +750,11 @@
               "RelativeToolTip": "TaskManager\\Views\\Category\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T13:42:23.347Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T13:42:23.347Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 16,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Home\\Index.cshtml",
@@ -396,12 +762,11 @@
               "RelativeToolTip": "TaskManager\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T18:06:01.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T18:06:01.635Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 15,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Shared\\_Layout.cshtml",
@@ -409,12 +774,11 @@
               "RelativeToolTip": "TaskManager\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAADgAAAAAAAAAAAAAAIYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T18:05:11.132Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T18:05:11.132Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 92,
               "Title": "CHART_TROUBLESHOOTING_GUIDE.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\CHART_TROUBLESHOOTING_GUIDE.md",
               "RelativeDocumentMoniker": "CHART_TROUBLESHOOTING_GUIDE.md",
@@ -426,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 93,
               "Title": "COMPLETED_TASKS_IMPROVEMENTS.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\COMPLETED_TASKS_IMPROVEMENTS.md",
               "RelativeDocumentMoniker": "COMPLETED_TASKS_IMPROVEMENTS.md",
@@ -434,12 +798,11 @@
               "RelativeToolTip": "COMPLETED_TASKS_IMPROVEMENTS.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAANgBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-02-09T15:15:42.677Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T15:15:42.677Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 18,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "TaskManager\\ViewModels\\LoginViewModel.cs",
@@ -451,7 +814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 76,
               "Title": "DEADLINE_IMPROVEMENTS_SUMMARY.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\DEADLINE_IMPROVEMENTS_SUMMARY.md",
               "RelativeDocumentMoniker": "DEADLINE_IMPROVEMENTS_SUMMARY.md",
@@ -463,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 19,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\ViewModels\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "TaskManager\\ViewModels\\RegisterViewModel.cs",
@@ -475,7 +838,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 77,
               "Title": "DEADLINE_VISUAL_COMPARISON.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\DEADLINE_VISUAL_COMPARISON.md",
               "RelativeDocumentMoniker": "DEADLINE_VISUAL_COMPARISON.md",
@@ -487,7 +850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 78,
               "Title": "Overdue.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Task\\Overdue.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Task\\Overdue.cshtml",
@@ -499,7 +862,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 91,
               "Title": "CHART_VISIBILITY_BUG_FIX.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\CHART_VISIBILITY_BUG_FIX.md",
               "RelativeDocumentMoniker": "CHART_VISIBILITY_BUG_FIX.md",
@@ -511,7 +874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 90,
               "Title": "PERFORMANCE_CURVE_IMPLEMENTATION.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\PERFORMANCE_CURVE_IMPLEMENTATION.md",
               "RelativeDocumentMoniker": "PERFORMANCE_CURVE_IMPLEMENTATION.md",
@@ -523,7 +886,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 89,
               "Title": "UPCOMING_PAGE_IMPLEMENTATION.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\UPCOMING_PAGE_IMPLEMENTATION.md",
               "RelativeDocumentMoniker": "UPCOMING_PAGE_IMPLEMENTATION.md",
@@ -535,7 +898,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 88,
               "Title": "Upcoming.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Task\\Upcoming.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Task\\Upcoming.cshtml",
@@ -547,7 +910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 87,
               "Title": "MONTHLY_DASHBOARD_IMPLEMENTATION.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\MONTHLY_DASHBOARD_IMPLEMENTATION.md",
               "RelativeDocumentMoniker": "MONTHLY_DASHBOARD_IMPLEMENTATION.md",
@@ -559,7 +922,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 86,
               "Title": "DASHBOARD_IMPROVEMENTS_SUMMARY.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\DASHBOARD_IMPROVEMENTS_SUMMARY.md",
               "RelativeDocumentMoniker": "DASHBOARD_IMPROVEMENTS_SUMMARY.md",
@@ -571,7 +934,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 85,
               "Title": "PAST_DEADLINE_PREVENTION.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\PAST_DEADLINE_PREVENTION.md",
               "RelativeDocumentMoniker": "PAST_DEADLINE_PREVENTION.md",
@@ -583,7 +946,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 84,
               "Title": "FutureDateAttribute.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Validation\\FutureDateAttribute.cs",
               "RelativeDocumentMoniker": "TaskManager\\Validation\\FutureDateAttribute.cs",
@@ -595,7 +958,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 83,
               "Title": "CATEGORY_TASKCOUNT_BUG_FIX.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\CATEGORY_TASKCOUNT_BUG_FIX.md",
               "RelativeDocumentMoniker": "CATEGORY_TASKCOUNT_BUG_FIX.md",
@@ -607,7 +970,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 82,
               "Title": "LAYOUT_SECTION_FIX.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\LAYOUT_SECTION_FIX.md",
               "RelativeDocumentMoniker": "LAYOUT_SECTION_FIX.md",
@@ -619,7 +982,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 81,
               "Title": "MY_TASKS_UI_IMPROVEMENT.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\MY_TASKS_UI_IMPROVEMENT.md",
               "RelativeDocumentMoniker": "MY_TASKS_UI_IMPROVEMENT.md",
@@ -631,7 +994,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 80,
               "Title": "OVERDUE_UX_IMPROVEMENTS.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\OVERDUE_UX_IMPROVEMENTS.md",
               "RelativeDocumentMoniker": "OVERDUE_UX_IMPROVEMENTS.md",
@@ -643,7 +1006,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 79,
               "Title": "OVERDUE_PAGE_IMPLEMENTATION.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\OVERDUE_PAGE_IMPLEMENTATION.md",
               "RelativeDocumentMoniker": "OVERDUE_PAGE_IMPLEMENTATION.md",
@@ -655,7 +1018,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 20,
               "Title": "UpdateTaskStatusData.sql",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Migrations\\UpdateTaskStatusData.sql",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Migrations\\UpdateTaskStatusData.sql",
@@ -666,7 +1029,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 75,
               "Title": "COMPLETE_PROJECT_SUMMARY.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\COMPLETE_PROJECT_SUMMARY.md",
               "RelativeDocumentMoniker": "COMPLETE_PROJECT_SUMMARY.md",
@@ -678,7 +1041,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 71,
               "Title": "AUTHENTICATION_SUMMARY.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\AUTHENTICATION_SUMMARY.md",
               "RelativeDocumentMoniker": "AUTHENTICATION_SUMMARY.md",
@@ -690,7 +1053,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 70,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\_ViewImports.cshtml",
@@ -702,7 +1065,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 74,
               "Title": "POSTPONED_REMOVAL_SUMMARY.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\POSTPONED_REMOVAL_SUMMARY.md",
               "RelativeDocumentMoniker": "POSTPONED_REMOVAL_SUMMARY.md",
@@ -714,7 +1077,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 73,
               "Title": "TaskService.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\Services\\TaskService.cs",
               "RelativeDocumentMoniker": "TaskManager.Business\\Services\\TaskService.cs",
@@ -726,7 +1089,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 72,
               "Title": "DASHBOARD_SUMMARY.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\DASHBOARD_SUMMARY.md",
               "RelativeDocumentMoniker": "DASHBOARD_SUMMARY.md",
@@ -738,7 +1101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 21,
               "Title": "ITaskService.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\Services\\ITaskService.cs",
               "RelativeDocumentMoniker": "TaskManager.Business\\Services\\ITaskService.cs",
@@ -750,7 +1113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 22,
               "Title": "IRecommendationService.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\Services\\IRecommendationService.cs",
               "RelativeDocumentMoniker": "TaskManager.Business\\Services\\IRecommendationService.cs",
@@ -762,7 +1125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 23,
               "Title": "IDashboardService.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\Services\\IDashboardService.cs",
               "RelativeDocumentMoniker": "TaskManager.Business\\Services\\IDashboardService.cs",
@@ -774,7 +1137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 24,
               "Title": "ICategoryService.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\Services\\ICategoryService.cs",
               "RelativeDocumentMoniker": "TaskManager.Business\\Services\\ICategoryService.cs",
@@ -786,7 +1149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 25,
               "Title": "DashboardService.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\Services\\DashboardService.cs",
               "RelativeDocumentMoniker": "TaskManager.Business\\Services\\DashboardService.cs",
@@ -798,7 +1161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 26,
               "Title": "CategoryService.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\Services\\CategoryService.cs",
               "RelativeDocumentMoniker": "TaskManager.Business\\Services\\CategoryService.cs",
@@ -810,7 +1173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 27,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Models\\Category.cs",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Models\\Category.cs",
@@ -822,7 +1185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 28,
               "Title": "UserTask.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Models\\UserTask.cs",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Models\\UserTask.cs",
@@ -834,7 +1197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 29,
               "Title": "DashboardDto.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\DTOs\\DashboardDto.cs",
               "RelativeDocumentMoniker": "TaskManager.Business\\DTOs\\DashboardDto.cs",
@@ -846,7 +1209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 30,
               "Title": "BUSINESS_LAYER_SUMMARY.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\BUSINESS_LAYER_SUMMARY.md",
               "RelativeDocumentMoniker": "BUSINESS_LAYER_SUMMARY.md",
@@ -858,7 +1221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 31,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\Mappings\\MappingProfile.cs",
               "RelativeDocumentMoniker": "TaskManager.Business\\Mappings\\MappingProfile.cs",
@@ -870,7 +1233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 32,
               "Title": "TaskDto.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\DTOs\\TaskDto.cs",
               "RelativeDocumentMoniker": "TaskManager.Business\\DTOs\\TaskDto.cs",
@@ -882,7 +1245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 33,
               "Title": "RecommendedTaskDto.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\DTOs\\RecommendedTaskDto.cs",
               "RelativeDocumentMoniker": "TaskManager.Business\\DTOs\\RecommendedTaskDto.cs",
@@ -894,7 +1257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 34,
               "Title": "CategoryDto.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.Business\\DTOs\\CategoryDto.cs",
               "RelativeDocumentMoniker": "TaskManager.Business\\DTOs\\CategoryDto.cs",
@@ -906,19 +1269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Program.cs",
-              "RelativeDocumentMoniker": "TaskManager\\Program.cs",
-              "ToolTip": "D:\\SilverKey\\TaskManager\\TaskManager\\Program.cs",
-              "RelativeToolTip": "TaskManager\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T14:30:14.591Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 35,
               "Title": "20260204143304_InitialCreate.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Migrations\\20260204143304_InitialCreate.cs",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Migrations\\20260204143304_InitialCreate.cs",
@@ -930,7 +1281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 36,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\appsettings.json",
               "RelativeDocumentMoniker": "TaskManager\\appsettings.json",
@@ -942,7 +1293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 69,
               "Title": "SQL_CONFIGURATION_SUMMARY.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\SQL_CONFIGURATION_SUMMARY.md",
               "RelativeDocumentMoniker": "SQL_CONFIGURATION_SUMMARY.md",
@@ -954,19 +1305,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 38,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\appsettings.Development.json",
               "RelativeDocumentMoniker": "TaskManager\\appsettings.Development.json",
               "ToolTip": "D:\\SilverKey\\TaskManager\\TaskManager\\appsettings.Development.json",
               "RelativeToolTip": "TaskManager\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-04T14:27:28.641Z"
+              "WhenOpened": "2026-02-04T14:27:28.641Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 41,
               "Title": "CategoryRepository.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Repositories\\CategoryRepository.cs",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Repositories\\CategoryRepository.cs",
@@ -978,7 +1330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 42,
               "Title": "IRepository.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Repositories\\IRepository.cs",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Repositories\\IRepository.cs",
@@ -990,7 +1342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 37,
               "Title": "ITaskRepository.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Repositories\\ITaskRepository.cs",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Repositories\\ITaskRepository.cs",
@@ -1002,19 +1354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "TaskManager.DataAccess\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "TaskManager.DataAccess\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAvwEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T13:31:14.542Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 43,
               "Title": "ICategoryRepository.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Repositories\\ICategoryRepository.cs",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Repositories\\ICategoryRepository.cs",
@@ -1026,7 +1366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 40,
               "Title": "TaskRepository.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Repositories\\TaskRepository.cs",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Repositories\\TaskRepository.cs",
@@ -1038,7 +1378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 39,
               "Title": "Repository.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Repositories\\Repository.cs",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Repositories\\Repository.cs",
@@ -1050,7 +1390,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 44,
               "Title": "DbInitializer.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Data\\DbInitializer.cs",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Data\\DbInitializer.cs",
@@ -1062,7 +1402,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 45,
               "Title": "ARCHITECTURE_SUMMARY.md",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\ARCHITECTURE_SUMMARY.md",
               "RelativeDocumentMoniker": "ARCHITECTURE_SUMMARY.md",
@@ -1074,7 +1414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 46,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Models\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Models\\ApplicationUser.cs",
@@ -1086,7 +1426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 47,
               "Title": "TaskPriority.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Enums\\TaskPriority.cs",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Enums\\TaskPriority.cs",
@@ -1098,7 +1438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 48,
               "Title": "TaskStatus.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager.DataAccess\\Enums\\TaskStatus.cs",
               "RelativeDocumentMoniker": "TaskManager.DataAccess\\Enums\\TaskStatus.cs",
@@ -1110,7 +1450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 49,
               "Title": "TaskController.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Controllers\\TaskController.cs",
               "RelativeDocumentMoniker": "TaskManager\\Controllers\\TaskController.cs",
@@ -1118,12 +1458,11 @@
               "RelativeToolTip": "TaskManager\\Controllers\\TaskController.cs",
               "ViewState": "AgIAALABAAAAAAAAAEBVwLQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T13:40:23.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T13:40:23.841Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 55,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "TaskManager\\Controllers\\CategoryController.cs",
@@ -1135,7 +1474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 58,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Task\\Index.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Task\\Index.cshtml",
@@ -1143,12 +1482,11 @@
               "RelativeToolTip": "TaskManager\\Views\\Task\\Index.cshtml",
               "ViewState": "AgIAADgBAAAAAAAAAIBJwDoBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T13:41:35.562Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T13:41:35.562Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 68,
               "Title": "AccessDenied.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Account\\AccessDenied.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Account\\AccessDenied.cshtml",
@@ -1160,7 +1498,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 67,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Account\\Login.cshtml",
@@ -1172,7 +1510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 66,
               "Title": "Register.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Account\\Register.cshtml",
@@ -1184,7 +1522,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 65,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Category\\Delete.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Category\\Delete.cshtml",
@@ -1196,7 +1534,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 64,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Category\\Edit.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Category\\Edit.cshtml",
@@ -1208,7 +1546,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 63,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Category\\Create.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Category\\Create.cshtml",
@@ -1220,7 +1558,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 62,
               "Title": "Details.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Task\\Details.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Task\\Details.cshtml",
@@ -1232,7 +1570,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 61,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Task\\Delete.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Task\\Delete.cshtml",
@@ -1244,31 +1582,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 60,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Task\\Edit.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Task\\Edit.cshtml",
               "ToolTip": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Task\\Edit.cshtml",
               "RelativeToolTip": "TaskManager\\Views\\Task\\Edit.cshtml",
-              "ViewState": "AgIAAHcAAAAAAAAAAABBwHgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMIAAAAAAAAAAABRwMUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T13:41:57.42Z"
+              "WhenOpened": "2026-02-04T13:41:57.42Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 59,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Task\\Create.cshtml",
               "RelativeDocumentMoniker": "TaskManager\\Views\\Task\\Create.cshtml",
               "ToolTip": "D:\\SilverKey\\TaskManager\\TaskManager\\Views\\Task\\Create.cshtml",
               "RelativeToolTip": "TaskManager\\Views\\Task\\Create.cshtml",
-              "ViewState": "AgIAAH4AAAAAAAAAAIBJwIAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMAAAAAAAAAAAABRwMMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T13:41:49.674Z"
+              "WhenOpened": "2026-02-04T13:41:49.674Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 57,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "TaskManager\\Controllers\\AccountController.cs",
@@ -1280,7 +1620,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 56,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "TaskManager\\Controllers\\DashboardController.cs",
@@ -1292,7 +1632,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 50,
               "Title": "TaskViewModel.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\ViewModels\\TaskViewModel.cs",
               "RelativeDocumentMoniker": "TaskManager\\ViewModels\\TaskViewModel.cs",
@@ -1304,7 +1644,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 51,
               "Title": "CreateTaskViewModel.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\ViewModels\\CreateTaskViewModel.cs",
               "RelativeDocumentMoniker": "TaskManager\\ViewModels\\CreateTaskViewModel.cs",
@@ -1316,7 +1656,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 54,
               "Title": "DashboardViewModel.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\ViewModels\\DashboardViewModel.cs",
               "RelativeDocumentMoniker": "TaskManager\\ViewModels\\DashboardViewModel.cs",
@@ -1328,7 +1668,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 53,
               "Title": "CategoryViewModel.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\ViewModels\\CategoryViewModel.cs",
               "RelativeDocumentMoniker": "TaskManager\\ViewModels\\CategoryViewModel.cs",
@@ -1340,7 +1680,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 52,
               "Title": "EditTaskViewModel.cs",
               "DocumentMoniker": "D:\\SilverKey\\TaskManager\\TaskManager\\ViewModels\\EditTaskViewModel.cs",
               "RelativeDocumentMoniker": "TaskManager\\ViewModels\\EditTaskViewModel.cs",

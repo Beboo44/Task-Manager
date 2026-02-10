@@ -30,25 +30,57 @@
 
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label asp-for="Deadline" class="form-label">
+                            <label class="form-label">
                                 Deadline
                                 <small class="text-muted">(Date & Time)</small>
                             </label>
-                            <input asp-for="Deadline" 
-                                   class="form-control" 
-                                   type="datetime-local" 
-                                   step="60"
-                                   min="@Model.MinDeadline"
-                                   value="@Model.DeadlineFormatted" />
+                            
+                            <!-- Date Input -->
+                            <div class="mb-2">
+                                <label for="deadlineDate" class="small text-muted">Date</label>
+                                <input type="date" 
+                                       id="deadlineDate" 
+                                       class="form-control" 
+                                       min="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                            </div>
+                            
+                            <!-- Time Input with Better UI -->
+                            <div class="mb-2">
+                                <label for="deadlineTime" class="small text-muted">Time</label>
+                                <div class="input-group">
+                                    <input type="time" 
+                                           id="deadlineTime" 
+                                           class="form-control" 
+                                           step="900" />
+                                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">
+                                        Quick
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#" onclick="setTime('09:00'); return false;">
+                                            <i class="bi bi-sunrise me-2"></i>Morning (9:00 AM)</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="setTime('12:00'); return false;">
+                                            <i class="bi bi-sun me-2"></i>Noon (12:00 PM)</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="setTime('14:00'); return false;">
+                                            <i class="bi bi-brightness-high me-2"></i>Afternoon (2:00 PM)</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="setTime('17:00'); return false;">
+                                            <i class="bi bi-sunset me-2"></i>Evening (5:00 PM)</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="setTime('23:59'); return false;">
+                                            <i class="bi bi-moon-stars me-2"></i>End of Day (11:59 PM)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Hidden field for actual submission -->
+                            <input asp-for="Deadline" type="hidden" id="deadlineHidden" />
                             <span asp-validation-for="Deadline" class="text-danger small"></span>
-                            <small class="text-muted">Deadline cannot be in the past</small>
+                            <small class="text-muted d-block">Deadline cannot be in the past</small>
                             
                             <!-- Quick Date Buttons -->
                             <div class="btn-group btn-group-sm mt-2 w-100" role="group">
-                                <button type="button" class="btn btn-outline-secondary" onclick="setDeadline(1)">Tomorrow</button>
-                                <button type="button" class="btn btn-outline-secondary" onclick="setDeadline(3)">3 Days</button>
-                                <button type="button" class="btn btn-outline-secondary" onclick="setDeadline(7)">1 Week</button>
-                                <button type="button" class="btn btn-outline-secondary" onclick="setDeadline(30)">1 Month</button>
+                                <button type="button" class="btn btn-outline-secondary" onclick="setQuickDeadline(1)">Tomorrow</button>
+                                <button type="button" class="btn btn-outline-secondary" onclick="setQuickDeadline(3)">3 Days</button>
+                                <button type="button" class="btn btn-outline-secondary" onclick="setQuickDeadline(7)">1 Week</button>
+                                <button type="button" class="btn btn-outline-secondary" onclick="setQuickDeadline(30)">1 Month</button>
                             </div>
                         </div>
 
@@ -101,28 +133,63 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     <script>
-        // Function to set deadline to X days from now
-        function setDeadline(days) {
-            const deadlineInput = document.querySelector('input[name="Deadline"]');
+        // Update hidden field when date or time changes
+        function updateDeadline() {
+            const dateInput = document.getElementById('deadlineDate');
+            const timeInput = document.getElementById('deadlineTime');
+            const hiddenInput = document.getElementById('deadlineHidden');
+            
+            if (dateInput.value && timeInput.value) {
+                // Combine date and time
+                hiddenInput.value = `${dateInput.value}T${timeInput.value}`;
+            }
+        }
+        
+        // Set time from quick preset
+        function setTime(time) {
+            const timeInput = document.getElementById('deadlineTime');
+            timeInput.value = time;
+            updateDeadline();
+        }
+        
+        // Set quick deadline (date + default time)
+        function setQuickDeadline(days) {
             const now = new Date();
             now.setDate(now.getDate() + days);
             
-            // Format as YYYY-MM-DDTHH:MM (without seconds)
+            // Set date
             const year = now.getFullYear();
             const month = String(now.getMonth() + 1).padStart(2, '0');
             const day = String(now.getDate()).padStart(2, '0');
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('deadlineDate').value = `${year}-${month}-${day}`;
             
-            deadlineInput.value = `${year}-${month}-${day}T${hours}:${minutes}`;
+            // Set time to 5:00 PM (17:00) by default for quick buttons
+            document.getElementById('deadlineTime').value = '17:00';
+            
+            updateDeadline();
         }
-
-        // Set default deadline on page load (7 days from now at current time)
+        
+        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
-            const deadlineInput = document.querySelector('input[name="Deadline"]');
-            if (!deadlineInput.value) {
-                setDeadline(7);
-            }
+            const dateInput = document.getElementById('deadlineDate');
+            const timeInput = document.getElementById('deadlineTime');
+            
+            // Set default to 7 days from now at 5:00 PM
+            const defaultDate = new Date();
+            defaultDate.setDate(defaultDate.getDate() + 7);
+            
+            const year = defaultDate.getFullYear();
+            const month = String(defaultDate.getMonth() + 1).padStart(2, '0');
+            const day = String(defaultDate.getDate()).padStart(2, '0');
+            
+            dateInput.value = `${year}-${month}-${day}`;
+            timeInput.value = '17:00'; // 5:00 PM
+            
+            updateDeadline();
+            
+            // Add event listeners
+            dateInput.addEventListener('change', updateDeadline);
+            timeInput.addEventListener('change', updateDeadline);
         });
     </script>
 }

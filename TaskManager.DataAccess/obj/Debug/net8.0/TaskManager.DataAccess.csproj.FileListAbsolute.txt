@@ -10,3 +10,4 @@ D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\TaskManager.Dat
 D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\refint\TaskManager.DataAccess.dll
 D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\TaskManager.DataAccess.pdb
 D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\ref\TaskManager.DataAccess.dll
+D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\TaskManager.DataAccess.sourcelink.json

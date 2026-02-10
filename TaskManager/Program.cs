@@ -75,6 +75,10 @@ namespace TaskManager
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            else
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -87,6 +91,35 @@ namespace TaskManager
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            // Database migration and seeding
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var logger = services.GetRequiredService<ILogger<Program>>();
+                
+                try
+                {
+                    logger.LogInformation("Starting database migration check...");
+                    var context = services.GetRequiredService<ApplicationDbContext>();
+                    
+                    logger.LogInformation("Database: {Database}", context.Database.GetConnectionString());
+                    
+                    // ALWAYS run migrations (temporarily for debugging)
+                    logger.LogInformation("Applying database migrations...");
+                    context.Database.Migrate();
+                    logger.LogInformation("? Database migrations applied successfully!");
+                }
+                catch (Exception ex)
+                {
+                    logger.LogError(ex, "? MIGRATION ERROR: {Message}", ex.Message);
+                    logger.LogError("Inner Exception: {InnerException}", ex.InnerException?.Message ?? "None");
+                    logger.LogError("Stack Trace: {StackTrace}", ex.StackTrace);
+                    
+                    // TEMPORARY: Re-throw to see error in browser (when ASPNETCORE_ENVIRONMENT=Development)
+                    throw;
+                }
+            }
 
             app.Run();
         }
