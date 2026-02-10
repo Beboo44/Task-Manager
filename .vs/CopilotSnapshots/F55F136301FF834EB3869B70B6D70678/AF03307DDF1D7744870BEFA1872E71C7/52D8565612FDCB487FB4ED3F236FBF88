@@ -1,0 +1,37 @@
+﻿using TaskStatus = TaskManager.DataAccess.Enums.TaskStatus;
+using TaskManager.Business.DTOs;
+using TaskManager.DataAccess.Enums;
+
+namespace TaskManager.Business.Services
+{
+    public interface ITaskService
+    {
+        // CRUD Operations
+        System.Threading.Tasks.Task<IEnumerable<TaskDto>> GetAllTasksAsync(string userId);
+        System.Threading.Tasks.Task<TaskDto?> GetTaskByIdAsync(int id, string userId);
+        System.Threading.Tasks.Task<TaskDto> CreateTaskAsync(TaskDto taskDto);
+        System.Threading.Tasks.Task<bool> UpdateTaskAsync(TaskDto taskDto);
+        System.Threading.Tasks.Task<bool> DeleteTaskAsync(int id, string userId);
+
+        // Filtered Queries
+        System.Threading.Tasks.Task<IEnumerable<TaskDto>> GetTasksByCategoryAsync(int categoryId, string userId);
+        System.Threading.Tasks.Task<IEnumerable<TaskDto>> GetTasksByStatusAsync(TaskStatus status, string userId);
+        System.Threading.Tasks.Task<IEnumerable<TaskDto>> GetTasksByPriorityAsync(TaskPriority priority, string userId);
+        System.Threading.Tasks.Task<IEnumerable<TaskDto>> GetUpcomingTasksAsync(string userId, int days = 7);
+        System.Threading.Tasks.Task<IEnumerable<TaskDto>> GetOverdueTasksAsync(string userId);
+
+        // Sorting
+        System.Threading.Tasks.Task<IEnumerable<TaskDto>> GetTasksSortedByUrgencyAsync(string userId);
+        System.Threading.Tasks.Task<IEnumerable<TaskDto>> GetTasksSortedByPriorityAsync(string userId);
+
+        // Task Status Management
+        System.Threading.Tasks.Task<bool> MarkTaskAsCompletedAsync(int id, string userId);
+        System.Threading.Tasks.Task<bool> MarkTaskAsPostponedAsync(int id, string userId);
+        System.Threading.Tasks.Task<bool> MarkTaskAsPendingAsync(int id, string userId);
+        System.Threading.Tasks.Task<bool> MarkTaskAsToDoAsync(int id, string userId);
+
+        // Statistics
+        System.Threading.Tasks.Task<int> GetTaskCountByStatusAsync(TaskStatus status, string userId);
+        System.Threading.Tasks.Task<int> GetTaskCountByPriorityAsync(TaskPriority priority, string userId);
+    }
+}

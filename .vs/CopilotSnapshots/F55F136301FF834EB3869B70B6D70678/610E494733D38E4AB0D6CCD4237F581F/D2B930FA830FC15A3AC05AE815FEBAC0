@@ -1,0 +1,37 @@
+﻿using TaskStatus = TaskManager.DataAccess.Enums.TaskStatus;
+using TaskManager.Business.DTOs;
+using TaskManager.DataAccess.Enums;
+
+namespace TaskManager.Business.Services
+{
+    public interface ITaskService
+    {
+        // CRUD Operations
+        Task<IEnumerable<TaskDto>> GetAllTasksAsync(string userId);
+        Task<TaskDto?> GetTaskByIdAsync(int id, string userId);
+        Task<TaskDto> CreateTaskAsync(TaskDto taskDto);
+        Task<bool> UpdateTaskAsync(TaskDto taskDto);
+        Task<bool> DeleteTaskAsync(int id, string userId);
+
+        // Filtered Queries
+        Task<IEnumerable<TaskDto>> GetTasksByCategoryAsync(int categoryId, string userId);
+        Task<IEnumerable<TaskDto>> GetTasksByStatusAsync(TaskStatus status, string userId);
+        Task<IEnumerable<TaskDto>> GetTasksByPriorityAsync(TaskPriority priority, string userId);
+        Task<IEnumerable<TaskDto>> GetUpcomingTasksAsync(string userId, int days = 7);
+        Task<IEnumerable<TaskDto>> GetOverdueTasksAsync(string userId);
+
+        // Sorting
+        Task<IEnumerable<TaskDto>> GetTasksSortedByUrgencyAsync(string userId);
+        Task<IEnumerable<TaskDto>> GetTasksSortedByPriorityAsync(string userId);
+
+        // Task Status Management
+        Task<bool> MarkTaskAsCompletedAsync(int id, string userId);
+        Task<bool> MarkTaskAsPostponedAsync(int id, string userId);
+        Task<bool> MarkTaskAsPendingAsync(int id, string userId);
+        Task<bool> MarkTaskAsToDoAsync(int id, string userId);
+
+        // Statistics
+        Task<int> GetTaskCountByStatusAsync(TaskStatus status, string userId);
+        Task<int> GetTaskCountByPriorityAsync(TaskPriority priority, string userId);
+    }
+}

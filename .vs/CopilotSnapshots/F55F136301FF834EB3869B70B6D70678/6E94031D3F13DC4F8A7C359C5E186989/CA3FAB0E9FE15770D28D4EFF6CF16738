@@ -1,0 +1,6 @@
+﻿// Placeholder for RecommendedTaskDto
+// This will contain Data Transfer Object for recommended tasks
+namespace TaskManager.Business.DTOs
+{
+    // TODO: Implement RecommendedTaskDto
+}

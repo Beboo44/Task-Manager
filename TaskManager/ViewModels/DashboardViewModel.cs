@@ -1,0 +1,51 @@
+using TaskManager.DataAccess.Enums;
+
+namespace TaskManager.ViewModels
+{
+    public class DashboardViewModel
+    {
+        // Current Month Task Statistics
+        public int TotalTasks { get; set; }
+        public int CompletedTasks { get; set; }
+        public int InProgressTasks { get; set; }
+        public int ToDoTasks { get; set; }
+        public int OverdueTasksCount { get; set; }
+
+        // Current Month Percentages
+        public double CompletionPercentage { get; set; }
+        public double InProgressPercentage { get; set; }
+        public double OverduePercentage { get; set; }
+
+        // All-Time Statistics (for comparison)
+        public int AllTimeTotalTasks { get; set; }
+        public int AllTimeCompletedTasks { get; set; }
+        public double AllTimeCompletionPercentage { get; set; }
+
+        // Priority Breakdown (Current Month)
+        public int CriticalPriorityTasks { get; set; }
+        public int HighPriorityTasks { get; set; }
+        public int MediumPriorityTasks { get; set; }
+        public int LowPriorityTasks { get; set; }
+
+        // Task Lists
+        public List<TaskViewModel> UpcomingTasks { get; set; } = new();
+        public List<TaskViewModel> OverdueTasks { get; set; } = new();
+
+        // Performance Score Data (for curve chart)
+        public Dictionary<string, double> WeeklyPerformanceScore { get; set; } = new();
+
+        // Recommended Task
+        public TaskViewModel? RecommendedTask { get; set; }
+        public string? RecommendationReason { get; set; }
+        public double? RecommendationScore { get; set; }
+
+        // Helper properties
+        public bool HasTasks => TotalTasks > 0;
+        public bool HasOverdueTasks => OverdueTasksCount > 0;
+        public bool HasRecommendation => RecommendedTask != null;
+        public int IncompleteTasks => TotalTasks - CompletedTasks;
+        
+        // Current month display
+        public string CurrentMonthName => DateTime.Now.ToString("MMMM yyyy");
+    }
+}

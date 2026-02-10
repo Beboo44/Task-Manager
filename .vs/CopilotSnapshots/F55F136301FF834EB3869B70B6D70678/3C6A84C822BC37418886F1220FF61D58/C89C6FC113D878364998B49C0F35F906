@@ -1,0 +1,6 @@
+﻿// Placeholder for IDashboardService
+// This will contain interface for Dashboard statistics and analytics
+namespace TaskManager.Business.Services
+{
+    // TODO: Implement IDashboardService
+}

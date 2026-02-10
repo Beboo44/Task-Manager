@@ -1,0 +1,8 @@
+﻿@* Placeholder for Create Task View *@
+@* This will contain form to create a new task *@
+
+@{
+    ViewData["Title"] = "Create Task";
+}
+
+@* TODO: Implement Create Task Form *@

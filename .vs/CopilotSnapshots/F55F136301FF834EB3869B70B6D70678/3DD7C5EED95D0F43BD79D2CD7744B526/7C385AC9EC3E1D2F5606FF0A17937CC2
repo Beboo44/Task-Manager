@@ -1,0 +1,126 @@
+﻿@model TaskManager.ViewModels.CreateTaskViewModel
+
+@{
+    ViewData["Title"] = "Create Task";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">
+                    <i class="bi bi-plus-circle me-2"></i>Create New Task
+                </h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create" method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Title" class="form-label"></label>
+                        <input asp-for="Title" class="form-control" placeholder="Enter task title" autofocus />
+                        <span asp-validation-for="Title" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label"></label>
+                        <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter task description (optional)"></textarea>
+                        <span asp-validation-for="Description" class="text-danger small"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Deadline" class="form-label">
+                                Deadline
+                                <small class="text-muted">(Date & Time)</small>
+                            </label>
+                            <input asp-for="Deadline" 
+                                   class="form-control" 
+                                   type="datetime-local" 
+                                   step="60"
+                                   value="@Model.DeadlineFormatted" />
+                            <span asp-validation-for="Deadline" class="text-danger small"></span>
+                            
+                            <!-- Quick Date Buttons -->
+                            <div class="btn-group btn-group-sm mt-2 w-100" role="group">
+                                <button type="button" class="btn btn-outline-secondary" onclick="setDeadline(1)">Tomorrow</button>
+                                <button type="button" class="btn btn-outline-secondary" onclick="setDeadline(3)">3 Days</button>
+                                <button type="button" class="btn btn-outline-secondary" onclick="setDeadline(7)">1 Week</button>
+                                <button type="button" class="btn btn-outline-secondary" onclick="setDeadline(30)">1 Month</button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="CategoryId" class="form-label"></label>
+                            <select asp-for="CategoryId" class="form-select" asp-items="Model.Categories">
+                                <option value="">Select a category</option>
+                            </select>
+                            <span asp-validation-for="CategoryId" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Priority" class="form-label"></label>
+                            <select asp-for="Priority" class="form-select">
+                                <option value="1">Low</option>
+                                <option value="2" selected>Medium</option>
+                                <option value="3">High</option>
+                                <option value="4">Critical</option>
+                            </select>
+                            <span asp-validation-for="Priority" class="text-danger small"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Status" class="form-label"></label>
+                            <select asp-for="Status" class="form-select">
+                                <option value="1" selected>To Do</option>
+                                <option value="2">Pending</option>
+                                <option value="3">Completed</option>
+                            </select>
+                            <span asp-validation-for="Status" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-x-circle me-2"></i>Cancel
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save me-2"></i>Create Task
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Function to set deadline to X days from now
+        function setDeadline(days) {
+            const deadlineInput = document.querySelector('input[name="Deadline"]');
+            const now = new Date();
+            now.setDate(now.getDate() + days);
+            
+            // Format as YYYY-MM-DDTHH:MM (without seconds)
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            
+            deadlineInput.value = `${year}-${month}-${day}T${hours}:${minutes}`;
+        }
+
+        // Set default deadline on page load (7 days from now at current time)
+        document.addEventListener('DOMContentLoaded', function() {
+            const deadlineInput = document.querySelector('input[name="Deadline"]');
+            if (!deadlineInput.value) {
+                setDeadline(7);
+            }
+        });
+    </script>
+}

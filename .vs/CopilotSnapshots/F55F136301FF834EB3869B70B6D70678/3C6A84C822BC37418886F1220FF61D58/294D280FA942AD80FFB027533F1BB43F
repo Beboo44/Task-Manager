@@ -1,0 +1,6 @@
+﻿// Placeholder for DashboardViewModel
+// This will contain ViewModel for Dashboard with statistics
+namespace TaskManager.ViewModels
+{
+    // TODO: Implement DashboardViewModel
+}

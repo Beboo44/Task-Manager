@@ -1,0 +1,8 @@
+﻿@* Placeholder for Edit Task View *@
+@* This will contain form to edit an existing task *@
+
+@{
+    ViewData["Title"] = "Edit Task";
+}
+
+@* TODO: Implement Edit Task Form *@

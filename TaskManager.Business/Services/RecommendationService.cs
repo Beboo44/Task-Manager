@@ -1,0 +1,124 @@
+using TaskStatus = TaskManager.DataAccess.Enums.TaskStatus;
+using AutoMapper;
+using TaskManager.Business.DTOs;
+using TaskManager.DataAccess.Enums;
+using TaskManager.DataAccess.Repositories;
+
+namespace TaskManager.Business.Services
+{
+    public class RecommendationService : IRecommendationService
+    {
+        private readonly ITaskRepository _taskRepository;
+        private readonly IMapper _mapper;
+
+        public RecommendationService(ITaskRepository taskRepository, IMapper mapper)
+        {
+            _taskRepository = taskRepository;
+            _mapper = mapper;
+        }
+
+        public async Task<RecommendedTaskDto?> GetRecommendedTaskAsync(string userId)
+        {
+            var recommendations = await GetTopRecommendedTasksAsync(userId, 1);
+            return recommendations.FirstOrDefault();
+        }
+
+        public async Task<IEnumerable<RecommendedTaskDto>> GetTopRecommendedTasksAsync(string userId, int count = 5)
+        {
+            var tasks = await _taskRepository.GetTasksByUserIdAsync(userId);
+
+            // Filter to only incomplete tasks
+            var incompleteTasks = tasks
+                .Where(t => t.Status != TaskStatus.Completed)
+                .ToList();
+
+            if (!incompleteTasks.Any())
+                return Enumerable.Empty<RecommendedTaskDto>();
+
+            var recommendations = new List<RecommendedTaskDto>();
+
+            foreach (var task in incompleteTasks)
+            {
+                var recommendation = CalculateRecommendationScore(task);
+                recommendations.Add(recommendation);
+            }
+
+            return recommendations
+                .OrderByDescending(r => r.RecommendationScore)
+                .Take(count);
+        }
+
+        private RecommendedTaskDto CalculateRecommendationScore(DataAccess.Models.UserTask task)
+        {
+            // Calculate urgency score (0-100)
+            var daysUntilDeadline = (task.Deadline.Date - DateTime.UtcNow.Date).Days;
+            int urgencyScore = daysUntilDeadline switch
+            {
+                < 0 => 100,  // Overdue
+                0 => 95,     // Due today
+                1 => 85,     // Due tomorrow
+                <= 3 => 70,  // Due in 2-3 days
+                <= 7 => 50,  // Due in 4-7 days
+                <= 14 => 30, // Due in 1-2 weeks
+                _ => 10      // More than 2 weeks
+            };
+
+            // Calculate priority score (0-100)
+            int priorityScore = task.Priority switch
+            {
+                TaskPriority.Critical => 100,
+                TaskPriority.High => 75,
+                TaskPriority.Medium => 50,
+                TaskPriority.Low => 25,
+                _ => 0
+            };
+
+            // Weighted score: 60% urgency, 40% priority
+            double recommendationScore = (urgencyScore * 0.6) + (priorityScore * 0.4);
+
+            // Generate recommendation reason
+            string reason = GenerateRecommendationReason(urgencyScore, priorityScore, daysUntilDeadline);
+
+            return new RecommendedTaskDto
+            {
+                Task = _mapper.Map<TaskDto>(task),
+                RecommendationScore = Math.Round(recommendationScore, 2),
+                RecommendationReason = reason,
+                UrgencyScore = urgencyScore,
+                PriorityScore = priorityScore
+            };
+        }
+
+        private string GenerateRecommendationReason(int urgencyScore, int priorityScore, int daysUntilDeadline)
+        {
+            if (daysUntilDeadline < 0)
+                return "?? This task is overdue! Complete it as soon as possible.";
+
+            if (daysUntilDeadline == 0 && priorityScore >= 75)
+                return "?? Critical task due today! Immediate action required.";
+
+            if (daysUntilDeadline == 0)
+                return "?? Due today! Make this a priority.";
+
+            if (daysUntilDeadline == 1 && priorityScore >= 75)
+                return "? High priority task due tomorrow. Plan to complete it soon.";
+
+            if (daysUntilDeadline == 1)
+                return "?? Due tomorrow. Consider completing it today.";
+
+            if (daysUntilDeadline <= 3 && priorityScore >= 75)
+                return "?? High priority with approaching deadline. Start working on it.";
+
+            if (daysUntilDeadline <= 3)
+                return "? Deadline approaching in a few days.";
+
+            if (priorityScore >= 75)
+                return "? High priority task. Important to complete.";
+
+            if (daysUntilDeadline <= 7)
+                return "?? Due within a week. Plan accordingly.";
+
+            return "? Good task to work on when you have time.";
+        }
+    }
+}

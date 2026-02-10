@@ -1,0 +1,8 @@
+﻿@* Placeholder for Task Details View *@
+@* This will show detailed information about a task *@
+
+@{
+    ViewData["Title"] = "Task Details";
+}
+
+@* TODO: Implement Task Details View *@

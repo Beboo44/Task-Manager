@@ -1,0 +1,27 @@
+using TaskStatus = TaskManager.DataAccess.Enums.TaskStatus;
+using TaskManager.DataAccess.Enums;
+
+namespace TaskManager.Business.DTOs
+{
+    public class TaskDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string? Description { get; set; }
+        public DateTime Deadline { get; set; }
+        public TaskPriority Priority { get; set; }
+        public TaskStatus Status { get; set; }
+        public int CategoryId { get; set; }
+        public string? CategoryName { get; set; }
+        public string UserId { get; set; } = string.Empty;
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public DateTime? CompletedAt { get; set; }
+
+        // Computed properties
+        public bool IsOverdue => Deadline < DateTime.UtcNow && Status != TaskStatus.Completed;
+        public int DaysUntilDeadline => (Deadline.Date - DateTime.UtcNow.Date).Days;
+        public string PriorityText => Priority.ToString();
+        public string StatusText => Status.ToString();
+    }
+}

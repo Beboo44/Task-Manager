@@ -1,0 +1,18 @@
+﻿using TaskManager.Business.DTOs;
+
+namespace TaskManager.Business.Services
+{
+    public interface ICategoryService
+    {
+        // CRUD Operations
+        System.Threading.Tasks.Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync(string userId);
+        System.Threading.Tasks.Task<CategoryDto?> GetCategoryByIdAsync(int id, string userId);
+        System.Threading.Tasks.Task<CategoryDto> CreateCategoryAsync(CategoryDto categoryDto);
+        System.Threading.Tasks.Task<bool> UpdateCategoryAsync(CategoryDto categoryDto);
+        System.Threading.Tasks.Task<bool> DeleteCategoryAsync(int id, string userId);
+
+        // Special Operations
+        System.Threading.Tasks.Task InitializeDefaultCategoriesAsync(string userId);
+        System.Threading.Tasks.Task<bool> CanDeleteCategoryAsync(int id, string userId);
+    }
+}

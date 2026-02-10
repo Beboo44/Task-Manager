@@ -1,0 +1,8 @@
+﻿@* Placeholder for Create Category View *@
+@* This will contain form to create a new category *@
+
+@{
+    ViewData["Title"] = "Create Category";
+}
+
+@* TODO: Implement Create Category Form *@

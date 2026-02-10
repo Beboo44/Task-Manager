@@ -1,0 +1,6 @@
+﻿// Placeholder for CategoryViewModel
+// This will contain ViewModel for Category views
+namespace TaskManager.ViewModels
+{
+    // TODO: Implement CategoryViewModel
+}

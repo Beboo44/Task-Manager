@@ -1,0 +1,6 @@
+﻿// Placeholder for TaskService
+// This will contain implementation of Task business logic
+namespace TaskManager.Business.Services
+{
+    // TODO: Implement TaskService
+}

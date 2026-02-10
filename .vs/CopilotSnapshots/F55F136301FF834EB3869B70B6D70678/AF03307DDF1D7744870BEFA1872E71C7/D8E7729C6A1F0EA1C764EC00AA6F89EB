@@ -1,0 +1,6 @@
+﻿// Placeholder for EditTaskViewModel
+// This will contain ViewModel for editing tasks
+namespace TaskManager.ViewModels
+{
+    // TODO: Implement EditTaskViewModel
+}

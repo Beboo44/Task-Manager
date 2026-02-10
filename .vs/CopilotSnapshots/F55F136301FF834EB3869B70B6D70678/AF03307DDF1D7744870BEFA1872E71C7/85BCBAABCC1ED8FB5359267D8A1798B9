@@ -1,0 +1,6 @@
+﻿// Placeholder for LoginViewModel
+// This will contain ViewModel for user login
+namespace TaskManager.ViewModels
+{
+    // TODO: Implement LoginViewModel
+}

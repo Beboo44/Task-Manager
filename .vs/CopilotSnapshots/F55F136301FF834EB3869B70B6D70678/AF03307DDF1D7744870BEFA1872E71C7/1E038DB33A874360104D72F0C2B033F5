@@ -1,0 +1,12 @@
+﻿using TaskManager.Business.DTOs;
+using TaskManager.DataAccess.Enums;
+
+namespace TaskManager.Business.Services
+{
+    public interface IDashboardService
+    {
+        System.Threading.Tasks.Task<DashboardDto> GetDashboardDataAsync(string userId);
+        System.Threading.Tasks.Task<IEnumerable<TaskDto>> GetFilteredTasksAsync(string userId, int? categoryId = null, Enums.TaskStatus? status = null, TaskPriority? priority = null);
+        System.Threading.Tasks.Task<IEnumerable<TaskDto>> GetSortedTasksAsync(string userId, string sortBy);
+    }
+}

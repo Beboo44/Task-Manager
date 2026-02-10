@@ -1,0 +1,120 @@
+﻿using TaskStatus = TaskManager.DataAccess.Enums.TaskStatus;
+using AutoMapper;
+using TaskManager.Business.DTOs;
+using TaskManager.DataAccess.Enums;
+using TaskManager.DataAccess.Repositories;
+
+namespace TaskManager.Business.Services
+{
+    public class DashboardService : IDashboardService
+    {
+        private readonly ITaskRepository _taskRepository;
+        private readonly ICategoryRepository _categoryRepository;
+        private readonly IRecommendationService _recommendationService;
+        private readonly IMapper _mapper;
+
+        public DashboardService(
+            ITaskRepository taskRepository,
+            ICategoryRepository categoryRepository,
+            IRecommendationService recommendationService,
+            IMapper mapper)
+        {
+            _taskRepository = taskRepository;
+            _categoryRepository = categoryRepository;
+            _recommendationService = recommendationService;
+            _mapper = mapper;
+        }
+
+        public async Task<DashboardDto> GetDashboardDataAsync(string userId)
+        {
+            var allTasks = await _taskRepository.GetTasksByUserIdAsync(userId);
+            var tasksList = allTasks.ToList();
+
+            var dashboard = new DashboardDto
+            {
+                // Task counts by status
+                TotalTasks = tasksList.Count,
+                CompletedTasks = tasksList.Count(t => t.Status == TaskStatus.Completed),
+                PendingTasks = tasksList.Count(t => t.Status == TaskStatus.Pending),
+                PostponedTasks = tasksList.Count(t => t.Status == TaskStatus.Postponed),
+                ToDoTasks = tasksList.Count(t => t.Status == TaskStatus.ToDo),
+                OverdueTasksCount = tasksList.Count(t => t.Deadline < DateTime.UtcNow && t.Status != TaskStatus.Completed),
+
+                // Task counts by priority
+                CriticalPriorityTasks = tasksList.Count(t => t.Priority == TaskPriority.Critical),
+                HighPriorityTasks = tasksList.Count(t => t.Priority == TaskPriority.High),
+                MediumPriorityTasks = tasksList.Count(t => t.Priority == TaskPriority.Medium),
+                LowPriorityTasks = tasksList.Count(t => t.Priority == TaskPriority.Low)
+            };
+
+            // Calculate percentages
+            if (dashboard.TotalTasks > 0)
+            {
+                dashboard.CompletionPercentage = Math.Round((double)dashboard.CompletedTasks / dashboard.TotalTasks * 100, 2);
+                dashboard.PendingPercentage = Math.Round((double)dashboard.PendingTasks / dashboard.TotalTasks * 100, 2);
+                dashboard.PostponedPercentage = Math.Round((double)dashboard.PostponedTasks / dashboard.TotalTasks * 100, 2);
+                dashboard.OverduePercentage = Math.Round((double)dashboard.OverdueTasksCount / dashboard.TotalTasks * 100, 2);
+            }
+
+            // Get upcoming and overdue tasks
+            var upcomingTasks = await _taskRepository.GetUpcomingTasksAsync(userId, 7);
+            dashboard.UpcomingTasks = _mapper.Map<List<TaskDto>>(upcomingTasks.Take(10));
+
+            var overdueTasks = await _taskRepository.GetOverdueTasksAsync(userId);
+            dashboard.OverdueTasks = _mapper.Map<List<TaskDto>>(overdueTasks.Take(10));
+
+            // Tasks by category
+            var categories = await _categoryRepository.GetUserCategoriesAsync(userId);
+            dashboard.TasksByCategory = categories.ToDictionary(
+                c => c.Name,
+                c => tasksList.Count(t => t.CategoryId == c.Id)
+            );
+
+            // Get recommended task
+            var recommendedTask = await _recommendationService.GetRecommendedTaskAsync(userId);
+            dashboard.RecommendedTask = recommendedTask?.Task;
+
+            return dashboard;
+        }
+
+        public async Task<IEnumerable<TaskDto>> GetFilteredTasksAsync(
+            string userId,
+            int? categoryId = null,
+            TaskStatus? status = null,
+            TaskPriority? priority = null)
+        {
+            var tasks = await _taskRepository.GetTasksByUserIdAsync(userId);
+
+            // Apply filters
+            if (categoryId.HasValue)
+                tasks = tasks.Where(t => t.CategoryId == categoryId.Value);
+
+            if (status.HasValue)
+                tasks = tasks.Where(t => t.Status == status.Value);
+
+            if (priority.HasValue)
+                tasks = tasks.Where(t => t.Priority == priority.Value);
+
+            return _mapper.Map<IEnumerable<TaskDto>>(tasks);
+        }
+
+        public async Task<IEnumerable<TaskDto>> GetSortedTasksAsync(string userId, string sortBy)
+        {
+            var tasks = await _taskRepository.GetTasksByUserIdAsync(userId);
+            var tasksList = tasks.ToList();
+
+            var sortedTasks = sortBy.ToLower() switch
+            {
+                "urgency" => tasksList.OrderBy(t => t.Deadline).ThenByDescending(t => t.Priority),
+                "priority" => tasksList.OrderByDescending(t => t.Priority).ThenBy(t => t.Deadline),
+                "deadline" => tasksList.OrderBy(t => t.Deadline),
+                "title" => tasksList.OrderBy(t => t.Title),
+                "status" => tasksList.OrderBy(t => t.Status),
+                "category" => tasksList.OrderBy(t => t.Category.Name),
+                _ => tasksList.OrderBy(t => t.CreatedAt)
+            };
+
+            return _mapper.Map<IEnumerable<TaskDto>>(sortedTasks);
+        }
+    }
+}

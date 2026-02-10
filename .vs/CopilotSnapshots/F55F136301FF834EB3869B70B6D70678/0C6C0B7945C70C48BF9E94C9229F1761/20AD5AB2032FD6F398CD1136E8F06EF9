@@ -1,0 +1,82 @@
+﻿@model IEnumerable<TaskManager.ViewModels.CategoryViewModel>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h2>
+            <i class="bi bi-tags me-2"></i>Categories
+        </h2>
+    </div>
+    <div class="col-md-4 text-end">
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="bi bi-plus-circle me-2"></i>Create New Category
+        </a>
+    </div>
+</div>
+
+@if (Model.Any())
+{
+    <div class="row">
+        @foreach (var category in Model)
+        {
+            <div class="col-md-6 col-lg-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="bi bi-tag me-2"></i>@category.Name
+                        </h5>
+                        
+                        @if (!string.IsNullOrEmpty(category.Description))
+                        {
+                            <p class="card-text text-muted">@category.Description</p>
+                        }
+
+                        <div class="mb-2">
+                            <span class="badge bg-info">
+                                @category.TaskCount Task@(category.TaskCount != 1 ? "s" : "")
+                            </span>
+                        </div>
+
+                        <small class="text-muted">
+                            Created: @category.CreatedAt.ToString("MMM dd, yyyy")
+                        </small>
+
+                        <div class="btn-group w-100 mt-3" role="group">
+                            <a asp-action="Edit" asp-route-id="@category.Id" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-pencil"></i> Edit
+                            </a>
+                            @if (category.CanDelete)
+                            {
+                                <a asp-action="Delete" asp-route-id="@category.Id" class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-trash"></i> Delete
+                                </a>
+                            }
+                            else
+                            {
+                                <button class="btn btn-sm btn-outline-secondary" disabled title="Cannot delete category with tasks">
+                                    <i class="bi bi-lock"></i> In Use
+                                </button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-body text-center py-5">
+            <i class="bi bi-tags text-muted" style="font-size: 4rem;"></i>
+            <h4 class="mt-3">No Categories Found</h4>
+            <p class="text-muted">Create your first category to organize your tasks!</p>
+            <a asp-action="Create" class="btn btn-primary mt-3">
+                <i class="bi bi-plus-circle me-2"></i>Create Category
+            </a>
+        </div>
+    </div>
+}

@@ -1,0 +1,24 @@
+using AutoMapper;
+using TaskManager.DataAccess.Models;
+using TaskManager.Business.DTOs;
+
+namespace TaskManager.Business.Mappings
+{
+    public class MappingProfile : Profile
+    {
+        public MappingProfile()
+        {
+            // UserTask <-> TaskDto
+            CreateMap<UserTask, TaskDto>()
+                .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.Name));
+
+            CreateMap<TaskDto, UserTask>();
+
+            // Category <-> CategoryDto
+            CreateMap<Category, CategoryDto>()
+                .ForMember(dest => dest.TaskCount, opt => opt.MapFrom(src => src.Tasks.Count));
+
+            CreateMap<CategoryDto, Category>();
+        }
+    }
+}

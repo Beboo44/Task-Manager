@@ -1,0 +1,27 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TaskManager.DataAccess.Models
+{
+    public class Category
+    {
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        public string Name { get; set; } = string.Empty;
+
+        [MaxLength(500)]
+        public string? Description { get; set; }
+
+        public bool IsDefault { get; set; } // Indicates if it's a system default category
+        
+        public string? UserId { get; set; } // Null for default categories, UserId for custom ones
+        
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        // Navigation properties
+        public virtual ApplicationUser? User { get; set; }
+        public virtual ICollection<Task> Tasks { get; set; } = new List<Task>();
+    }
+}

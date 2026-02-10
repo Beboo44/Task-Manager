@@ -1,0 +1,45 @@
+﻿using TaskManager.DataAccess.Enums;
+
+namespace TaskManager.ViewModels
+{
+    public class DashboardViewModel
+    {
+        // Task Statistics
+        public int TotalTasks { get; set; }
+        public int CompletedTasks { get; set; }
+        public int PendingTasks { get; set; }
+        public int PostponedTasks { get; set; }
+        public int ToDoTasks { get; set; }
+        public int OverdueTasksCount { get; set; }
+
+        // Percentages
+        public double CompletionPercentage { get; set; }
+        public double PendingPercentage { get; set; }
+        public double PostponedPercentage { get; set; }
+        public double OverduePercentage { get; set; }
+
+        // Priority Breakdown
+        public int CriticalPriorityTasks { get; set; }
+        public int HighPriorityTasks { get; set; }
+        public int MediumPriorityTasks { get; set; }
+        public int LowPriorityTasks { get; set; }
+
+        // Task Lists
+        public List<TaskViewModel> UpcomingTasks { get; set; } = new();
+        public List<TaskViewModel> OverdueTasks { get; set; } = new();
+
+        // Category Statistics
+        public Dictionary<string, int> TasksByCategory { get; set; } = new();
+
+        // Recommended Task
+        public TaskViewModel? RecommendedTask { get; set; }
+        public string? RecommendationReason { get; set; }
+        public double? RecommendationScore { get; set; }
+
+        // Helper properties
+        public bool HasTasks => TotalTasks > 0;
+        public bool HasOverdueTasks => OverdueTasksCount > 0;
+        public bool HasRecommendation => RecommendedTask != null;
+        public int IncompleteTasks => TotalTasks - CompletedTasks;
+    }
+}

@@ -1,0 +1,8 @@
+﻿@* Placeholder for Edit Category View *@
+@* This will contain form to edit an existing category *@
+
+@{
+    ViewData["Title"] = "Edit Category";
+}
+
+@* TODO: Implement Edit Category Form *@

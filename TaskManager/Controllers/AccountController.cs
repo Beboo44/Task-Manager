@@ -1,0 +1,183 @@
+// Placeholder for AccountController
+// This will contain controller actions for Authentication (Register/Login/Logout)
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using TaskManager.DataAccess.Models;
+using TaskManager.ViewModels;
+using TaskManager.Business.Services;
+
+namespace TaskManager.Controllers
+{
+    public class AccountController : Controller
+    {
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly ICategoryService _categoryService;
+        private readonly ILogger<AccountController> _logger;
+
+        public AccountController(
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager,
+            ICategoryService categoryService,
+            ILogger<AccountController> logger)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _categoryService = categoryService;
+            _logger = logger;
+        }
+
+        // GET: /Account/Register
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Register(string? returnUrl = null)
+        {
+            if (User.Identity?.IsAuthenticated ?? false)
+            {
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
+        // POST: /Account/Register
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterViewModel model, string? returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = new ApplicationUser
+            {
+                UserName = model.Email,
+                Email = model.Email,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            var result = await _userManager.CreateAsync(user, model.Password);
+
+            if (result.Succeeded)
+            {
+                _logger.LogInformation("User created a new account with password.");
+
+                // Initialize default categories for the new user
+                try
+                {
+                    await _categoryService.InitializeDefaultCategoriesAsync(user.Id);
+                    _logger.LogInformation("Default categories created for user {UserId}", user.Id);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Error creating default categories for user {UserId}", user.Id);
+                }
+
+                // Sign in the user
+                await _signInManager.SignInAsync(user, isPersistent: false);
+                _logger.LogInformation("User logged in.");
+
+                TempData["SuccessMessage"] = "Registration successful! Welcome to Task Manager.";
+
+                if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                {
+                    return Redirect(returnUrl);
+                }
+
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            // If we got this far, something failed, add errors to ModelState
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+
+            return View(model);
+        }
+
+        // GET: /Account/Login
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Login(string? returnUrl = null)
+        {
+            if (User.Identity?.IsAuthenticated ?? false)
+            {
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            ViewData["ReturnUrl"] = returnUrl;
+            return View(new LoginViewModel { ReturnUrl = returnUrl });
+        }
+
+        // POST: /Account/Login
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            // This doesn't count login failures towards account lockout
+            // To enable password failures to trigger account lockout, set lockoutOnFailure: true
+            var result = await _signInManager.PasswordSignInAsync(
+                model.Email,
+                model.Password,
+                model.RememberMe,
+                lockoutOnFailure: true);
+
+            if (result.Succeeded)
+            {
+                _logger.LogInformation("User logged in.");
+                TempData["SuccessMessage"] = "Welcome back!";
+
+                if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
+                {
+                    return Redirect(model.ReturnUrl);
+                }
+
+                return RedirectToAction("Index", "Dashboard");
+            }
+
+            if (result.IsLockedOut)
+            {
+                _logger.LogWarning("User account locked out.");
+                ModelState.AddModelError(string.Empty, "Account locked out. Please try again later.");
+                return View(model);
+            }
+
+            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+            return View(model);
+        }
+
+        // POST: /Account/Logout
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            _logger.LogInformation("User logged out.");
+            TempData["SuccessMessage"] = "You have been logged out successfully.";
+            return RedirectToAction("Index", "Home");
+        }
+
+        // GET: /Account/AccessDenied
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+    }
+}

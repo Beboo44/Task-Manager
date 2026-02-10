@@ -1,0 +1,13 @@
+﻿// Placeholder for RecommendedTaskDto
+// This will contain Data Transfer Object for recommended tasks
+namespace TaskManager.Business.DTOs
+{
+    public class RecommendedTaskDto
+    {
+        public TaskDto Task { get; set; } = null!;
+        public double RecommendationScore { get; set; }
+        public string RecommendationReason { get; set; } = string.Empty;
+        public int UrgencyScore { get; set; }
+        public int PriorityScore { get; set; }
+    }
+}

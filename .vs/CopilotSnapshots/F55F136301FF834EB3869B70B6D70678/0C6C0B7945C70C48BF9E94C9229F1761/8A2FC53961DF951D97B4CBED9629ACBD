@@ -1,0 +1,23 @@
+﻿// Placeholder for TaskController
+// This will contain controller actions for Task CRUD operations
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace TaskManager.Controllers
+{
+    [Authorize]
+    public class TaskController : Controller
+    {
+        // TODO: Implement Task CRUD actions
+        // - Index (list all tasks)
+        // - Create (GET and POST)
+        // - Edit (GET and POST)
+        // - Delete (GET and POST)
+        // - Details
+        
+        public IActionResult Index()
+        {
+            return View();
+        }
+    }
+}

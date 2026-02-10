@@ -1,0 +1,13 @@
+﻿@* Placeholder for Login View *@
+@* This will contain login form *@
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@* TODO: Implement Login Form with:
+   - Email
+   - Password
+   - Remember Me checkbox
+   - Link to Register page
+*@

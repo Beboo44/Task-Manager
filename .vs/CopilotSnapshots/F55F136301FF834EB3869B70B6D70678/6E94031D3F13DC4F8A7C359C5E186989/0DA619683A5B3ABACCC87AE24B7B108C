@@ -1,0 +1,6 @@
+﻿// Placeholder for DashboardDto
+// This will contain Data Transfer Object for Dashboard statistics
+namespace TaskManager.Business.DTOs
+{
+    // TODO: Implement DashboardDto
+}

@@ -1,0 +1,10 @@
+﻿namespace TaskManager.DataAccess.Enums
+{
+    public enum TaskStatus
+    {
+        ToDo = 1,
+        Pending = 2,
+        Postponed = 3,
+        Completed = 4
+    }
+}

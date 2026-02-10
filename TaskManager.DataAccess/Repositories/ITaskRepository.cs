@@ -1,0 +1,16 @@
+using TaskManager.DataAccess.Models;
+using TaskManager.DataAccess.Enums;
+
+namespace TaskManager.DataAccess.Repositories
+{
+    public interface ITaskRepository : IRepository<UserTask>
+    {
+        System.Threading.Tasks.Task<IEnumerable<UserTask>> GetTasksByUserIdAsync(string userId);
+        System.Threading.Tasks.Task<IEnumerable<UserTask>> GetTasksByCategoryAsync(int categoryId, string userId);
+        System.Threading.Tasks.Task<IEnumerable<UserTask>> GetTasksByStatusAsync(Enums.TaskStatus status, string userId);
+        System.Threading.Tasks.Task<IEnumerable<UserTask>> GetTasksByPriorityAsync(TaskPriority priority, string userId);
+        System.Threading.Tasks.Task<IEnumerable<UserTask>> GetUpcomingTasksAsync(string userId, int days = 7);
+        System.Threading.Tasks.Task<IEnumerable<UserTask>> GetOverdueTasksAsync(string userId);
+        System.Threading.Tasks.Task<UserTask?> GetTaskWithDetailsAsync(int id);
+    }
+}

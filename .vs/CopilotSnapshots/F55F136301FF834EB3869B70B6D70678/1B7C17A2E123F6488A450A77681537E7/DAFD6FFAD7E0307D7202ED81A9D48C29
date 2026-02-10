@@ -1,0 +1,373 @@
+﻿@model TaskManager.ViewModels.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <h2>
+            <i class="bi bi-speedometer2 me-2"></i>Dashboard
+        </h2>
+        <p class="text-muted">Overview of your tasks and productivity - <strong>@Model.CurrentMonthName</strong></p>
+    </div>
+</div>
+
+@if (!Model.HasTasks)
+{
+    <!-- Empty State -->
+    <div class="card">
+        <div class="card-body text-center py-5">
+            <i class="bi bi-clipboard-check text-muted" style="font-size: 4rem;"></i>
+            <h4 class="mt-3">No Tasks Yet</h4>
+            <p class="text-muted">Create your first task to see your dashboard come to life!</p>
+            <a asp-controller="Task" asp-action="Create" class="btn btn-primary mt-3">
+                <i class="bi bi-plus-circle me-2"></i>Create Your First Task
+            </a>
+        </div>
+    </div>
+}
+else
+{
+    <!-- Statistics Cards -->
+    <div class="row mb-4">
+        <!-- Total Tasks -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-primary">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-2">Total Tasks</h6>
+                            <h2 class="mb-0">@Model.TotalTasks</h2>
+                        </div>
+                        <div class="text-primary">
+                            <i class="bi bi-list-task" style="font-size: 2.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completed Tasks -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-success">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-2">Completed</h6>
+                            <h2 class="mb-0 text-success">@Model.CompletedTasks</h2>
+                            <small class="text-success">@Model.CompletionPercentage%</small>
+                        </div>
+                        <div class="text-success">
+                            <i class="bi bi-check-circle-fill" style="font-size: 2.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- In Progress Tasks -->
+        <div class="col-md-3 mb-3">
+            <div class="card border-warning">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h6 class="text-muted mb-2">In Progress</h6>
+                            <h2 class="mb-0 text-warning">@Model.IncompleteTasks</h2>
+                            <small class="text-muted">In Progress & To Do</small>
+                        </div>
+                        <div class="text-warning">
+                            <i class="bi bi-hourglass-split" style="font-size: 2.5rem;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overdue Tasks -->
+        <div class="col-md-3 mb-3">
+            <a asp-controller="Task" asp-action="Overdue" class="text-decoration-none">
+                <div class="card border-danger">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="text-muted mb-2">Overdue</h6>
+                                <h2 class="mb-0 text-danger">@Model.OverdueTasksCount</h2>
+                                @if (Model.OverduePercentage > 0)
+                                {
+                                    <small class="text-danger">@Model.OverduePercentage%</small>
+                                }
+                            </div>
+                            <div class="text-danger">
+                                <i class="bi bi-exclamation-triangle-fill" style="font-size: 2.5rem;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="row mb-4">
+        <!-- Status Distribution -->
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">
+                        <i class="bi bi-pie-chart me-2"></i>Task Status Distribution
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="statusChart" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Priority Distribution -->
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">
+                        <i class="bi bi-bar-chart me-2"></i>Task Priority Distribution
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="priorityChart" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Weekly Progress Chart -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">
+                        <i class="bi bi-graph-up me-2"></i>Weekly Progress (Last 7 Days)
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="weeklyChart" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recommended Task -->
+    <div class="row mb-4">
+        @if (Model.HasRecommendation)
+        {
+            <div class="col-12">
+                <div class="card border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="bi bi-lightbulb me-2"></i>Recommended Task
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="alert alert-info mb-3">
+                                    <i class="bi bi-info-circle me-2"></i>@Model.RecommendationReason
+                                </div>
+                                
+                                <h5 class="card-title">@Model.RecommendedTask!.Title</h5>
+                                
+                                @if (!string.IsNullOrEmpty(Model.RecommendedTask.Description))
+                                {
+                                    <p class="card-text text-muted">
+                                        @(Model.RecommendedTask.Description.Length > 150 
+                                            ? Model.RecommendedTask.Description.Substring(0, 150) + "..." 
+                                            : Model.RecommendedTask.Description)
+                                    </p>
+                                }
+
+                                <div class="mb-3">
+                                    <span class="@Model.RecommendedTask.PriorityBadgeClass me-2">@Model.RecommendedTask.PriorityText</span>
+                                    <span class="@Model.RecommendedTask.StatusBadgeClass me-2">@Model.RecommendedTask.StatusText</span>
+                                    <span class="badge bg-light text-dark">
+                                        <i class="bi bi-tag me-1"></i>@Model.RecommendedTask.CategoryName
+                                    </span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <small class="text-muted">
+                                        <i class="bi bi-calendar-event me-1"></i>
+                                        @if (Model.RecommendedTask.IsOverdue)
+                                        {
+                                            <span class="text-danger fw-bold">Overdue by @Math.Abs(Model.RecommendedTask.DaysUntilDeadline) days</span>
+                                        }
+                                        else if (Model.RecommendedTask.DaysUntilDeadline == 0)
+                                        {
+                                            <span class="text-warning fw-bold">Due today</span>
+                                        }
+                                        else
+                                        {
+                                            <span>Due in @Model.RecommendedTask.DaysUntilDeadline days</span>
+                                        }
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="d-grid gap-2">
+                                    <a asp-controller="Task" asp-action="Details" asp-route-id="@Model.RecommendedTask.Id" 
+                                       class="btn btn-primary">
+                                        <i class="bi bi-eye me-2"></i>View Task
+                                    </a>
+                                    <form asp-controller="Task" asp-action="MarkAsCompleted" asp-route-id="@Model.RecommendedTask.Id" method="post">
+                                        <button type="submit" class="btn btn-success w-100">
+                                            <i class="bi bi-check-circle me-2"></i>Mark as Completed
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Upcoming & Overdue Tasks -->
+    <div class="row">
+        <!-- Upcoming Tasks -->
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">
+                        <i class="bi bi-calendar-check me-2"></i>Upcoming Tasks
+                        <span class="badge bg-primary">@Model.UpcomingTasks.Count</span>
+                    </h5>
+                </div>
+                <div class="card-body" style="max-height: 400px; overflow-y: auto;">
+                    @if (Model.UpcomingTasks.Any())
+                    {
+                        <div class="list-group list-group-flush">
+                            @foreach (var task in Model.UpcomingTasks)
+                            {
+                                <a asp-controller="Task" asp-action="Details" asp-route-id="@task.Id" 
+                                   class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between align-items-start">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">@task.Title</h6>
+                                            <small class="text-muted">
+                                                <i class="bi bi-calendar-event me-1"></i>
+                                                @task.Deadline.ToString("MMM dd, yyyy")
+                                            </small>
+                                        </div>
+                                        <span class="@task.PriorityBadgeClass">@task.PriorityText</span>
+                                    </div>
+                                </a>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-muted text-center py-3">No upcoming tasks in the next 7 days</p>
+                    }
+                </div>
+                @if (Model.UpcomingTasks.Any())
+                {
+                    <div class="card-footer bg-white text-center">
+                        <a asp-controller="Task" asp-action="Index" class="text-decoration-none">
+                            View All Tasks <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Overdue Tasks -->
+        <div class="col-md-6 mb-3">
+            <div class="card @(Model.HasOverdueTasks ? "border-danger" : "")">
+                <div class="card-header @(Model.HasOverdueTasks ? "bg-danger text-white" : "bg-white")">
+                    <h5 class="mb-0">
+                        <i class="bi bi-exclamation-triangle me-2"></i>Overdue Tasks
+                        @if (Model.HasOverdueTasks)
+                        {
+                            <span class="badge bg-white text-danger">@Model.OverdueTasks.Count</span>
+                        }
+                    </h5>
+                </div>
+                <div class="card-body" style="max-height: 400px; overflow-y: auto;">
+                    @if (Model.OverdueTasks.Any())
+                    {
+                        <div class="list-group list-group-flush">
+                            @foreach (var task in Model.OverdueTasks)
+                            {
+                                <a asp-controller="Task" asp-action="Details" asp-route-id="@task.Id" 
+                                   class="list-group-item list-group-item-action list-group-item-danger">
+                                    <div class="d-flex w-100 justify-content-between align-items-start">
+                                        <div class="flex-grow-1">
+                                            <h6 class="mb-1">@task.Title</h6>
+                                            <small class="text-danger">
+                                                <i class="bi bi-exclamation-triangle me-1"></i>
+                                                Overdue by @Math.Abs(task.DaysUntilDeadline) days
+                                            </small>
+                                        </div>
+                                        <span class="@task.PriorityBadgeClass">@task.PriorityText</span>
+                                    </div>
+                                </a>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center py-3">
+                            <i class="bi bi-check-circle text-success" style="font-size: 3rem;"></i>
+                            <p class="text-success mt-2 mb-0">No overdue tasks!</p>
+                        </div>
+                    }
+                </div>
+                @if (Model.OverdueTasks.Any())
+                {
+                    <div class="card-footer bg-white text-center">
+                        <a asp-controller="Task" asp-action="Overdue" class="text-decoration-none text-danger">
+                            View All Overdue <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+<!-- All-Time Statistics Section -->
+@if (Model.AllTimeTotalTasks > 0)
+{
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">
+                        <i class="bi bi-graph-up-arrow me-2"></i>All-Time Statistics
+                    </h5>
+                    <div class="row text-center">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="d-flex flex-column">
+                                <span class="text-muted small">Total Tasks Created</span>
+                                <h3 class="mb-0 text-primary">@Model.AllTimeTotalTasks</h3>
+                                <small class="text-muted">since account creation</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <div class="d-flex flex-column">
+                                <span class="text-muted small">Tasks Completed</span>
+                                <h3 class="mb-0 text-success">@Model.AllTimeCompletedTasks</h3>
+                                <small class="text-success">@Model.AllTimeCompletionPercentage% completion rate</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="d-flex flex-column">
+                                <span class="text-muted small">This Month vs All-Time</span>
+                                <h3 class="mb-0">
+                                    @if (Model.CompletionPercentage > Model.AllTimeCompletionPercentage)
+                                    {
+                                        <span class="text-success">
+                                            <i class="bi bi-arrow-up-circle-fill"></i>
+                                            +@Math.Round(Model.CompletionPercentage - Model.AllTimeCompletionPercentage, 1)%
+                                        </span>
+                                    }
+                                    else if (Model.CompletionPercentage < Model.AllTimeCompletionPercentage)

@@ -1,0 +1,392 @@
+﻿// Placeholder for TaskController
+// This will contain controller actions for Task CRUD operations
+using TaskStatus = TaskManager.DataAccess.Enums.TaskStatus;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Security.Claims;
+using TaskManager.Business.Services;
+using TaskManager.Business.DTOs;
+using TaskManager.ViewModels;
+using TaskManager.DataAccess.Enums;
+
+namespace TaskManager.Controllers
+{
+    [Authorize]
+    public class TaskController : Controller
+    {
+        private readonly ITaskService _taskService;
+        private readonly ICategoryService _categoryService;
+        private readonly ILogger<TaskController> _logger;
+
+        public TaskController(
+            ITaskService taskService,
+            ICategoryService categoryService,
+            ILogger<TaskController> logger)
+        {
+            _taskService = taskService;
+            _categoryService = categoryService;
+            _logger = logger;
+        }
+
+        private string GetUserId() => User.FindFirstValue(ClaimTypes.NameIdentifier) ?? string.Empty;
+
+        // GET: /Task
+        public async System.Threading.Tasks.Task<IActionResult> Index(string? status, string? priority, int? categoryId, string? sortBy)
+        {
+            var userId = GetUserId();
+            var tasks = (await _taskService.GetAllTasksAsync(userId)).ToList();
+
+            // Apply filters
+            if (!string.IsNullOrEmpty(status) && Enum.TryParse<TaskStatus>(status, out var taskStatus))
+            {
+                tasks = tasks.Where(t => t.Status == taskStatus).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(priority) && Enum.TryParse<TaskPriority>(priority, out var taskPriority))
+            {
+                tasks = tasks.Where(t => t.Priority == taskPriority).ToList();
+            }
+
+            if (categoryId.HasValue)
+            {
+                tasks = tasks.Where(t => t.CategoryId == categoryId.Value).ToList();
+            }
+
+            // Apply sorting (default to deadline if no sort specified)
+            if (string.IsNullOrEmpty(sortBy))
+            {
+                sortBy = "deadline"; // Default sort by deadline
+            }
+
+            tasks = sortBy.ToLower() switch
+            {
+                "urgency" => tasks.OrderBy(t => t.Deadline).ThenByDescending(t => t.Priority).ToList(),
+                "priority" => tasks.OrderByDescending(t => t.Priority).ThenBy(t => t.Deadline).ToList(),
+                "title" => tasks.OrderBy(t => t.Title).ToList(),
+                "status" => tasks.OrderBy(t => t.Status).ToList(),
+                "category" => tasks.OrderBy(t => t.CategoryName).ToList(),
+                "deadline" => tasks.OrderBy(t => t.Deadline).ToList(),
+                _ => tasks.OrderBy(t => t.Deadline).ToList()
+            };
+
+            // Map to ViewModel
+            var viewModel = tasks.Select(t => new TaskViewModel
+            {
+                Id = t.Id,
+                Title = t.Title,
+                Description = t.Description,
+                Deadline = t.Deadline,
+                Priority = t.Priority,
+                Status = t.Status,
+                CategoryId = t.CategoryId,
+                CategoryName = t.CategoryName,
+                CreatedAt = t.CreatedAt,
+                UpdatedAt = t.UpdatedAt,
+                CompletedAt = t.CompletedAt
+            }).ToList();
+
+            // Load categories for filter
+            var categories = await _categoryService.GetAllCategoriesAsync(userId);
+            ViewBag.Categories = categories.Select(c => new SelectListItem
+            {
+                Value = c.Id.ToString(),
+                Text = c.Name,
+                Selected = c.Id == categoryId
+            });
+
+            ViewBag.CurrentStatus = status;
+            ViewBag.CurrentPriority = priority;
+            ViewBag.CurrentCategoryId = categoryId;
+            ViewBag.CurrentSortBy = sortBy;
+
+            return View(viewModel);
+        }
+
+        // GET: /Task/Create
+        public async System.Threading.Tasks.Task<IActionResult> Create()
+        {
+            var userId = GetUserId();
+            var categories = await _categoryService.GetAllCategoriesAsync(userId);
+
+            var viewModel = new CreateTaskViewModel
+            {
+                Categories = categories.Select(c => new SelectListItem
+                {
+                    Value = c.Id.ToString(),
+                    Text = c.Name
+                }),
+                Deadline = DateTime.Now.AddDays(7)
+            };
+
+            return View(viewModel);
+        }
+
+        // POST: /Task/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async System.Threading.Tasks.Task<IActionResult> Create(CreateTaskViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                var userId = GetUserId();
+                var categories = await _categoryService.GetAllCategoriesAsync(userId);
+                model.Categories = categories.Select(c => new SelectListItem
+                {
+                    Value = c.Id.ToString(),
+                    Text = c.Name
+                });
+                return View(model);
+            }
+
+            // Round deadline to nearest minute (remove seconds and milliseconds)
+            var roundedDeadline = new DateTime(
+                model.Deadline.Year,
+                model.Deadline.Month,
+                model.Deadline.Day,
+                model.Deadline.Hour,
+                model.Deadline.Minute,
+                0, // seconds
+                0  // milliseconds
+            );
+
+            var taskDto = new TaskDto
+            {
+                Title = model.Title,
+                Description = model.Description,
+                Deadline = roundedDeadline,
+                Priority = model.Priority,
+                Status = model.Status,
+                CategoryId = model.CategoryId,
+                UserId = GetUserId()
+            };
+
+            await _taskService.CreateTaskAsync(taskDto);
+            TempData["SuccessMessage"] = "Task created successfully!";
+            return RedirectToAction(nameof(Index));
+        }
+
+        // GET: /Task/Edit/5
+        public async System.Threading.Tasks.Task<IActionResult> Edit(int id)
+        {
+            var userId = GetUserId();
+            var task = await _taskService.GetTaskByIdAsync(id, userId);
+
+            if (task == null)
+            {
+                TempData["ErrorMessage"] = "Task not found.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            var categories = await _categoryService.GetAllCategoriesAsync(userId);
+
+            var viewModel = new EditTaskViewModel
+            {
+                Id = task.Id,
+                Title = task.Title,
+                Description = task.Description,
+                Deadline = task.Deadline,
+                Priority = task.Priority,
+                Status = task.Status,
+                CategoryId = task.CategoryId,
+                UserId = userId,
+                Categories = categories.Select(c => new SelectListItem
+                {
+                    Value = c.Id.ToString(),
+                    Text = c.Name,
+                    Selected = c.Id == task.CategoryId
+                })
+            };
+
+            return View(viewModel);
+        }
+
+        // POST: /Task/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async System.Threading.Tasks.Task<IActionResult> Edit(int id, EditTaskViewModel model)
+        {
+            if (id != model.Id)
+            {
+                return NotFound();
+            }
+
+            if (!ModelState.IsValid)
+            {
+                var userId = GetUserId();
+                var categories = await _categoryService.GetAllCategoriesAsync(userId);
+                model.Categories = categories.Select(c => new SelectListItem
+                {
+                    Value = c.Id.ToString(),
+                    Text = c.Name
+                });
+                return View(model);
+            }
+
+            // Round deadline to nearest minute (remove seconds and milliseconds)
+            var roundedDeadline = new DateTime(
+                model.Deadline.Year,
+                model.Deadline.Month,
+                model.Deadline.Day,
+                model.Deadline.Hour,
+                model.Deadline.Minute,
+                0, // seconds
+                0  // milliseconds
+            );
+
+            var taskDto = new TaskDto
+            {
+                Id = model.Id,
+                Title = model.Title,
+                Description = model.Description,
+                Deadline = roundedDeadline,
+                Priority = model.Priority,
+                Status = model.Status,
+                CategoryId = model.CategoryId,
+                UserId = GetUserId()
+            };
+
+            var success = await _taskService.UpdateTaskAsync(taskDto);
+
+            if (!success)
+            {
+                TempData["ErrorMessage"] = "Failed to update task.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            TempData["SuccessMessage"] = "Task updated successfully!";
+            return RedirectToAction(nameof(Index));
+        }
+
+        // GET: /Task/Delete/5
+        public async System.Threading.Tasks.Task<IActionResult> Delete(int id)
+        {
+            var userId = GetUserId();
+            var task = await _taskService.GetTaskByIdAsync(id, userId);
+
+            if (task == null)
+            {
+                TempData["ErrorMessage"] = "Task not found.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            var viewModel = new TaskViewModel
+            {
+                Id = task.Id,
+                Title = task.Title,
+                Description = task.Description,
+                Deadline = task.Deadline,
+                Priority = task.Priority,
+                Status = task.Status,
+                CategoryId = task.CategoryId,
+                CategoryName = task.CategoryName,
+                CreatedAt = task.CreatedAt,
+                UpdatedAt = task.UpdatedAt,
+                CompletedAt = task.CompletedAt
+            };
+
+            return View(viewModel);
+        }
+
+        // POST: /Task/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async System.Threading.Tasks.Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var userId = GetUserId();
+            var success = await _taskService.DeleteTaskAsync(id, userId);
+
+            if (!success)
+            {
+                TempData["ErrorMessage"] = "Failed to delete task.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            TempData["SuccessMessage"] = "Task deleted successfully!";
+            return RedirectToAction(nameof(Index));
+        }
+
+        // GET: /Task/Details/5
+        public async System.Threading.Tasks.Task<IActionResult> Details(int id)
+        {
+            var userId = GetUserId();
+            var task = await _taskService.GetTaskByIdAsync(id, userId);
+
+            if (task == null)
+            {
+                TempData["ErrorMessage"] = "Task not found.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            var viewModel = new TaskViewModel
+            {
+                Id = task.Id,
+                Title = task.Title,
+                Description = task.Description,
+                Deadline = task.Deadline,
+                Priority = task.Priority,
+                Status = task.Status,
+                CategoryId = task.CategoryId,
+                CategoryName = task.CategoryName,
+                CreatedAt = task.CreatedAt,
+                UpdatedAt = task.UpdatedAt,
+                CompletedAt = task.CompletedAt
+            };
+
+            return View(viewModel);
+        }
+
+        // GET: /Task/Overdue
+        public async System.Threading.Tasks.Task<IActionResult> Overdue()
+        {
+            var userId = GetUserId();
+            var overdueTasks = await _taskService.GetOverdueTasksAsync(userId);
+
+            // Map to ViewModel
+            var viewModel = overdueTasks.Select(t => new TaskViewModel
+            {
+                Id = t.Id,
+                Title = t.Title,
+                Description = t.Description,
+                Deadline = t.Deadline,
+                Priority = t.Priority,
+                Status = t.Status,
+                CategoryId = t.CategoryId,
+                CategoryName = t.CategoryName,
+                CreatedAt = t.CreatedAt,
+                UpdatedAt = t.UpdatedAt,
+                CompletedAt = t.CompletedAt
+            }).ToList();
+
+            // Load categories for potential filtering
+            var categories = await _categoryService.GetAllCategoriesAsync(userId);
+            ViewBag.Categories = categories.Select(c => new SelectListItem
+            {
+                Value = c.Id.ToString(),
+                Text = c.Name
+            });
+
+            return View(viewModel);
+        }
+
+        // POST: /Task/MarkAsCompleted/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async System.Threading.Tasks.Task<IActionResult> MarkAsCompleted(int id)
+        {
+            var userId = GetUserId();
+            var success = await _taskService.MarkTaskAsCompletedAsync(id, userId);
+
+            if (!success)
+            {
+                TempData["ErrorMessage"] = "Failed to mark task as completed.";
+            }
+            else
+            {
+                TempData["SuccessMessage"] = "Task marked as completed!";
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+    }
+}

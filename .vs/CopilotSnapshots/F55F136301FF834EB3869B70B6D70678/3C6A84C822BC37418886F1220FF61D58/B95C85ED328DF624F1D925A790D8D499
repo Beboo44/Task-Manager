@@ -1,0 +1,6 @@
+﻿// Placeholder for RegisterViewModel
+// This will contain ViewModel for user registration
+namespace TaskManager.ViewModels
+{
+    // TODO: Implement RegisterViewModel
+}

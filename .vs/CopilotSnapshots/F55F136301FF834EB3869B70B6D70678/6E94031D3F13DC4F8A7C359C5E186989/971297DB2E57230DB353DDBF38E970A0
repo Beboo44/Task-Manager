@@ -1,0 +1,19 @@
+﻿@* Placeholder for Dashboard Index View *@
+@* This will display dashboard with statistics, charts, and recommended tasks *@
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+@* TODO: Implement Dashboard View with:
+   - Total tasks count
+   - Completed tasks count
+   - Pending tasks count
+   - Overdue tasks count
+   - Task completion percentage
+   - Charts/graphs
+   - Upcoming deadlines
+   - Recommended tasks section
+   - Filter options (by category, status, priority)
+   - Sort options (by urgency, priority)
+*@

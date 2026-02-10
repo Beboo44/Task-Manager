@@ -1,0 +1,198 @@
+﻿@model List<TaskManager.ViewModels.TaskViewModel>
+
+@{
+    ViewData["Title"] = "Overdue Tasks";
+}
+
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h2 class="text-danger">
+                    <i class="bi bi-exclamation-triangle me-2"></i>Overdue Tasks
+                </h2>
+                <p class="text-muted">
+                    Tasks that have passed their deadline
+                    <span class="badge bg-danger ms-2">@Model.Count overdue</span>
+                </p>
+            </div>
+            <div>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left me-2"></i>Back to All Tasks
+                </a>
+                <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary">
+                    <i class="bi bi-speedometer2 me-2"></i>Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (!Model.Any())
+{
+    <!-- No Overdue Tasks -->
+    <div class="card">
+        <div class="card-body text-center py-5">
+            <i class="bi bi-check-circle text-success" style="font-size: 5rem;"></i>
+            <h3 class="mt-3 text-success">All Caught Up!</h3>
+            <p class="text-muted">You have no overdue tasks. Great job!</p>
+            <a asp-action="Index" class="btn btn-primary mt-3">
+                <i class="bi bi-list-task me-2"></i>View All Tasks
+            </a>
+        </div>
+    </div>
+}
+else
+{
+    <!-- Alert Banner -->
+    <div class="alert alert-danger d-flex align-items-center mb-4" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-3" style="font-size: 1.5rem;"></i>
+        <div>
+            <strong>Attention Required!</strong> You have @Model.Count overdue task@(Model.Count > 1 ? "s" : "") that need immediate attention.
+        </div>
+    </div>
+
+    <!-- Overdue Tasks List -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4">
+        @foreach (var task in Model.OrderBy(t => t.Deadline))
+        {
+            <div class="col">
+                <div class="card h-100 border-danger shadow-sm">
+                    <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
+                        <span class="@task.PriorityBadgeClass">
+                            <i class="bi bi-flag-fill me-1"></i>@task.PriorityText
+                        </span>
+                        <span class="badge bg-white text-danger">
+                            <i class="bi bi-exclamation-triangle me-1"></i>
+                            @Math.Abs(task.DaysUntilDeadline) days overdue
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a asp-action="Details" asp-route-id="@task.Id" class="text-decoration-none text-dark">
+                                @task.Title
+                            </a>
+                        </h5>
+
+                        @if (!string.IsNullOrEmpty(task.Description))
+                        {
+                            <p class="card-text text-muted small">
+                                @(task.Description.Length > 100 
+                                    ? task.Description.Substring(0, 100) + "..." 
+                                    : task.Description)
+                            </p>
+                        }
+
+                        <div class="mb-2">
+                            <small class="text-muted">
+                                <i class="bi bi-calendar-x me-1"></i>
+                                <strong class="text-danger">Was due:</strong> @task.Deadline.ToString("MMM dd, yyyy HH:mm")
+                            </small>
+                        </div>
+
+                        <div class="mb-2">
+                            <small class="text-muted">
+                                <i class="bi bi-tag me-1"></i>@task.CategoryName
+                            </small>
+                        </div>
+
+                        <div class="mb-3">
+                            <span class="@task.StatusBadgeClass">@task.StatusText</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-danger">
+                        <div class="d-grid gap-2">
+                            <a asp-action="Details" asp-route-id="@task.Id" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-eye me-2"></i>View Details
+                            </a>
+                            <div class="btn-group" role="group">
+                                <a asp-action="Edit" asp-route-id="@task.Id" class="btn btn-sm btn-outline-secondary">
+                                    <i class="bi bi-pencil me-1"></i>Edit
+                                </a>
+                                <form asp-action="MarkAsCompleted" asp-route-id="@task.Id" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-success">
+                                        <i class="bi bi-check-circle me-1"></i>Complete
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Statistics -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card text-center border-danger">
+                <div class="card-body">
+                    <h6 class="text-muted">Most Overdue</h6>
+                    <h3 class="text-danger">@Math.Abs(Model.Min(t => t.DaysUntilDeadline)) days</h3>
+                    <small class="text-muted">Oldest overdue task</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center border-warning">
+                <div class="card-body">
+                    <h6 class="text-muted">Average Overdue</h6>
+                    <h3 class="text-warning">@Math.Round(Model.Average(t => Math.Abs(t.DaysUntilDeadline)), 1) days</h3>
+                    <small class="text-muted">Average delay</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center border-info">
+                <div class="card-body">
+                    <h6 class="text-muted">Critical Priority</h6>
+                    <h3 class="text-info">@Model.Count(t => t.Priority == TaskManager.DataAccess.Enums.TaskPriority.Critical)</h3>
+                    <small class="text-muted">Needs immediate action</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collapsible Quick Actions -->
+    <div class="accordion" id="quickActionsAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingQuickActions">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQuickActions" aria-expanded="false" aria-controls="collapseQuickActions">
+                    <i class="bi bi-lightning me-2"></i>Quick Navigation Options
+                </button>
+            </h2>
+            <div id="collapseQuickActions" class="accordion-collapse collapse" aria-labelledby="headingQuickActions" data-bs-parent="#quickActionsAccordion">
+                <div class="accordion-body">
+                    <p class="text-muted mb-3">View tasks by priority or sorting preference</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a asp-action="Index" asp-route-sortBy="urgency" class="btn btn-outline-primary">
+                            <i class="bi bi-sort-down me-2"></i>Sort by Urgency
+                        </a>
+                        <a asp-action="Index" asp-route-priority="Critical" class="btn btn-outline-danger">
+                            <i class="bi bi-flag-fill me-2"></i>Critical Tasks
+                        </a>
+                        <a asp-action="Index" asp-route-priority="High" class="btn btn-outline-warning">
+                            <i class="bi bi-flag-fill me-2"></i>High Priority
+                        </a>
+                        <a asp-action="Index" class="btn btn-outline-secondary">
+                            <i class="bi bi-list-task me-2"></i>All Tasks
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script>
+        // Add confirmation before marking as completed
+        document.querySelectorAll('form[action*="MarkAsCompleted"]').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                if (!confirm('Mark this overdue task as completed?')) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+}

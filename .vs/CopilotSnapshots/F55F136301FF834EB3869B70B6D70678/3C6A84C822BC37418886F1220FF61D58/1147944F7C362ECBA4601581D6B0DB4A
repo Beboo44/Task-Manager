@@ -1,0 +1,8 @@
+﻿@* Placeholder for Category Index View *@
+@* This will display list of all categories *@
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+@* TODO: Implement Category List View *@

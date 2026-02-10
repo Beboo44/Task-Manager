@@ -1,0 +1,6 @@
+﻿// Placeholder for TaskViewModel
+// This will contain ViewModel for Task views
+namespace TaskManager.ViewModels
+{
+    // TODO: Implement TaskViewModel
+}

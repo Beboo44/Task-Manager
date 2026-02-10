@@ -1,0 +1,6 @@
+﻿// Placeholder for ITaskService
+// This will contain interface for Task business logic
+namespace TaskManager.Business.Services
+{
+    // TODO: Implement ITaskService
+}

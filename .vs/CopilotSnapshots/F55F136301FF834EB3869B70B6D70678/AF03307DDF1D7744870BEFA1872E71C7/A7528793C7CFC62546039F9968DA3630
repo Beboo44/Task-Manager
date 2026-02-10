@@ -1,0 +1,37 @@
+﻿// Placeholder for DashboardDto
+// This will contain Data Transfer Object for Dashboard statistics
+namespace TaskManager.Business.DTOs
+{
+    public class DashboardDto
+    {
+        // Task Statistics
+        public int TotalTasks { get; set; }
+        public int CompletedTasks { get; set; }
+        public int PendingTasks { get; set; }
+        public int PostponedTasks { get; set; }
+        public int ToDoTasks { get; set; }
+        public int OverdueTasks { get; set; }
+
+        // Percentages
+        public double CompletionPercentage { get; set; }
+        public double PendingPercentage { get; set; }
+        public double PostponedPercentage { get; set; }
+        public double OverduePercentage { get; set; }
+
+        // Priority Breakdown
+        public int CriticalPriorityTasks { get; set; }
+        public int HighPriorityTasks { get; set; }
+        public int MediumPriorityTasks { get; set; }
+        public int LowPriorityTasks { get; set; }
+
+        // Upcoming Tasks
+        public List<TaskDto> UpcomingTasks { get; set; } = new();
+        public List<TaskDto> OverdueTasks { get; set; } = new();
+
+        // Category Statistics
+        public Dictionary<string, int> TasksByCategory { get; set; } = new();
+
+        // Recommended Task
+        public TaskDto? RecommendedTask { get; set; }
+    }
+}

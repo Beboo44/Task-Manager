@@ -1,0 +1,44 @@
+﻿using Microsoft.EntityFrameworkCore;
+using TaskManager.DataAccess.Data;
+using TaskManager.DataAccess.Models;
+
+namespace TaskManager.DataAccess.Repositories
+{
+    public class CategoryRepository : Repository<Category>, ICategoryRepository
+    {
+        public CategoryRepository(ApplicationDbContext context) : base(context)
+        {
+        }
+
+        public async Task<IEnumerable<Category>> GetDefaultCategoriesAsync()
+        {
+            return await _dbSet
+                .Where(c => c.IsDefault)
+                .OrderBy(c => c.Name)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Category>> GetUserCategoriesAsync(string userId)
+        {
+            return await _dbSet
+                .Where(c => c.UserId == userId && !c.IsDefault)
+                .OrderBy(c => c.Name)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Category>> GetAllUserCategoriesAsync(string userId)
+        {
+            return await _dbSet
+                .Where(c => c.IsDefault || c.UserId == userId)
+                .OrderBy(c => c.Name)
+                .ToListAsync();
+        }
+
+        public async Task<Category?> GetCategoryWithTasksAsync(int id)
+        {
+            return await _dbSet
+                .Include(c => c.Tasks)
+                .FirstOrDefaultAsync(c => c.Id == id);
+        }
+    }
+}

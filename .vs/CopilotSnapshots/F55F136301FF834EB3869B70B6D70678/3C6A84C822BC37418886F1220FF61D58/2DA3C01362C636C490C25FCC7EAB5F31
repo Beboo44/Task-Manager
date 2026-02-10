@@ -1,0 +1,6 @@
+﻿// Placeholder for CategoryService
+// This will contain implementation of Category business logic
+namespace TaskManager.Business.Services
+{
+    // TODO: Implement CategoryService
+}

@@ -1,0 +1,8 @@
+﻿@* Placeholder for Delete Category View *@
+@* This will show category details and confirm deletion *@
+
+@{
+    ViewData["Title"] = "Delete Category";
+}
+
+@* TODO: Implement Delete Category Confirmation *@

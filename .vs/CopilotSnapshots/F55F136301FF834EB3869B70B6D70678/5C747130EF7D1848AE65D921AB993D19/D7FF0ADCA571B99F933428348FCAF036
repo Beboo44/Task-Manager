@@ -1,0 +1,15 @@
+﻿using TaskManager.DataAccess.Models;
+
+namespace TaskManager.DataAccess.Repositories
+{
+    public interface ITaskRepository : IRepository<Models.Task>
+    {
+        Task<IEnumerable<Task>> GetTasksByUserIdAsync(string userId);
+        Task<IEnumerable<Task>> GetTasksByCategoryAsync(int categoryId, string userId);
+        Task<IEnumerable<Task>> GetTasksByStatusAsync(TaskStatus status, string userId);
+        Task<IEnumerable<Task>> GetTasksByPriorityAsync(TaskPriority priority, string userId);
+        Task<IEnumerable<Task>> GetUpcomingTasksAsync(string userId, int days = 7);
+        Task<IEnumerable<Task>> GetOverdueTasksAsync(string userId);
+        Task<Task?> GetTaskWithDetailsAsync(int id);
+    }
+}

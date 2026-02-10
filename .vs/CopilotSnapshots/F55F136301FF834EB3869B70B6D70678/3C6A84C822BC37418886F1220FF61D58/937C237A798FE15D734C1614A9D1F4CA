@@ -1,0 +1,16 @@
+﻿// Placeholder for DashboardController
+// This will contain controller actions for Dashboard display
+using Microsoft.AspNetCore.Mvc;
+
+namespace TaskManager.Controllers
+{
+    public class DashboardController : Controller
+    {
+        // TODO: Implement Dashboard actions
+        // - Index (main dashboard view with statistics)
+        // - FilterByCategory
+        // - FilterByStatus
+        // - FilterByPriority
+        // - GetRecommendedTasks
+    }
+}

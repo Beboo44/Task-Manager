@@ -1,0 +1,281 @@
+﻿@model IEnumerable<TaskManager.ViewModels.TaskViewModel>
+
+@{
+    ViewData["Title"] = "My Tasks";
+    var currentStatus = ViewBag.CurrentStatus as string;
+    var currentPriority = ViewBag.CurrentPriority as string;
+    var currentCategoryId = ViewBag.CurrentCategoryId as int?;
+    var currentSortBy = ViewBag.CurrentSortBy as string;
+}
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <h2>
+            <i class="bi bi-list-task me-2"></i>My Tasks
+        </h2>
+        <p class="text-muted mb-0">Manage and track all your tasks</p>
+    </div>
+    <div class="col-md-6 text-end">
+        <a asp-action="Overdue" class="btn btn-outline-danger me-2">
+            <i class="bi bi-exclamation-triangle me-2"></i>Overdue Tasks
+        </a>
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="bi bi-plus-circle me-2"></i>Create New Task
+        </a>
+    </div>
+</div>
+
+<!-- Filters and Sorting -->
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get" asp-action="Index" class="row g-3">
+            <div class="col-md-3">
+                <label class="form-label">Status</label>
+                <select name="status" class="form-select">
+                    <option value="">All Statuses</option>
+                    <option value="ToDo" selected="@(currentStatus == "ToDo")">To Do</option>
+                    <option value="InProgress" selected="@(currentStatus == "InProgress")">In Progress</option>
+                    <option value="Completed" selected="@(currentStatus == "Completed")">Completed</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Priority</label>
+                <select name="priority" class="form-select">
+                    <option value="">All Priorities</option>
+                    <option value="Low" selected="@(currentPriority == "Low")">Low</option>
+                    <option value="Medium" selected="@(currentPriority == "Medium")">Medium</option>
+                    <option value="High" selected="@(currentPriority == "High")">High</option>
+                    <option value="Critical" selected="@(currentPriority == "Critical")">Critical</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Category</label>
+                <select name="categoryId" class="form-select" asp-items="ViewBag.Categories">
+                    <option value="">All Categories</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Sort By</label>
+                <select name="sortBy" class="form-select">
+                    <option value="deadline" selected="@(currentSortBy == "deadline" || string.IsNullOrEmpty(currentSortBy))">Deadline</option>
+                    <option value="urgency" selected="@(currentSortBy == "urgency")">Urgency</option>
+                    <option value="priority" selected="@(currentSortBy == "priority")">Priority</option>
+                    <option value="title" selected="@(currentSortBy == "title")">Title</option>
+                    <option value="status" selected="@(currentSortBy == "status")">Status</option>
+                    <option value="category" selected="@(currentSortBy == "category")">Category</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-funnel me-2"></i>Apply Filters
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-x-circle me-2"></i>Clear Filters
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Tasks List - Stack Layout -->
+@if (Model.Any())
+{
+    <div class="task-list">
+        @foreach (var task in Model)
+        {
+            <div class="task-card mb-3 @(task.IsOverdue ? "border-danger" : "") @(task.Status == TaskManager.DataAccess.Enums.TaskStatus.Completed ? "task-completed" : "")" 
+                 onclick="window.location.href='@Url.Action("Details", new { id = task.Id })'" 
+                 style="cursor: pointer;">
+                <div class="card shadow-sm hover-lift">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <!-- Task Info - Main Section -->
+                            <div class="col-md-7">
+                                <div class="d-flex align-items-start mb-2">
+                                    <!-- Priority Indicator -->
+                                    <div class="priority-indicator me-3" style="border-left: 4px solid @(task.Priority switch {
+                                        TaskManager.DataAccess.Enums.TaskPriority.Critical => "#dc3545",
+                                        TaskManager.DataAccess.Enums.TaskPriority.High => "#fd7e14",
+                                        TaskManager.DataAccess.Enums.TaskPriority.Medium => "#0dcaf0",
+                                        _ => "#6c757d"
+                                    }); padding-left: 12px;">
+                                        <h5 class="mb-1 task-title">@task.Title</h5>
+                                        @if (!string.IsNullOrEmpty(task.Description))
+                                        {
+                                            <p class="text-muted mb-0 small task-description">
+                                                @(task.Description.Length > 150 ? task.Description.Substring(0, 150) + "..." : task.Description)
+                                            </p>
+                                        }
+                                    </div>
+                                </div>
+                                
+                                <!-- Badges -->
+                                <div class="mt-2">
+                                    <span class="@task.StatusBadgeClass me-1">
+                                        <i class="bi @(task.Status switch {
+                                            TaskManager.DataAccess.Enums.TaskStatus.Completed => "bi-check-circle-fill",
+                                            TaskManager.DataAccess.Enums.TaskStatus.InProgress => "bi-hourglass-split",
+                                            _ => "bi-circle"
+                                        }) me-1"></i>
+                                        @task.StatusText
+                                    </span>
+                                    <span class="badge bg-light text-dark me-1">
+                                        <i class="bi bi-tag me-1"></i>@task.CategoryName
+                                    </span>
+                                    <span class="@task.PriorityBadgeClass">
+                                        <i class="bi bi-flag-fill me-1"></i>@task.PriorityText
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Deadline & Actions Section -->
+                            <div class="col-md-5">
+                                <div class="text-md-end">
+                                    <!-- Deadline Info -->
+                                    <div class="deadline-info mb-3">
+                                        <div class="d-inline-flex align-items-center @(task.IsOverdue ? "text-danger" : task.DaysUntilDeadline == 0 ? "text-warning" : "text-muted")">
+                                            <i class="bi bi-calendar-event me-2" style="font-size: 1.25rem;"></i>
+                                            <div class="text-start">
+                                                <div class="fw-bold">
+                                                    @task.Deadline.ToString("MMM dd, yyyy")
+                                                </div>
+                                                <small class="d-block">
+                                                    @task.Deadline.ToString("HH:mm")
+                                                    @if (task.IsOverdue)
+                                                    {
+                                                        <span class="text-danger fw-bold d-block">
+                                                            <i class="bi bi-exclamation-triangle me-1"></i>
+                                                            Overdue by @Math.Abs(task.DaysUntilDeadline) day@(Math.Abs(task.DaysUntilDeadline) != 1 ? "s" : "")
+                                                        </span>
+                                                    }
+                                                    else if (task.DaysUntilDeadline == 0)
+                                                    {
+                                                        <span class="text-warning fw-bold d-block">
+                                                            <i class="bi bi-clock me-1"></i>Due today
+                                                        </span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="d-block">Due in @task.DaysUntilDeadline day@(task.DaysUntilDeadline != 1 ? "s" : "")</span>
+                                                    }
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Action Buttons -->
+                                    <div class="btn-group" role="group" onclick="event.stopPropagation();">
+                                        <a asp-action="Edit" asp-route-id="@task.Id" class="btn btn-sm btn-outline-secondary" title="Edit">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+                                        @if (task.Status != TaskManager.DataAccess.Enums.TaskStatus.Completed)
+                                        {
+                                            <form asp-action="MarkAsCompleted" asp-route-id="@task.Id" method="post" class="d-inline">
+                                                <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as Completed">
+                                                    <i class="bi bi-check-circle"></i>
+                                                </button>
+                                            </form>
+                                        }
+                                        <a asp-action="Delete" asp-route-id="@task.Id" class="btn btn-sm btn-outline-danger" title="Delete">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-body text-center py-5">
+            <i class="bi bi-clipboard-check text-muted" style="font-size: 4rem;"></i>
+            <h4 class="mt-3">No Tasks Found</h4>
+            <p class="text-muted">Create your first task to get started!</p>
+            <a asp-action="Create" class="btn btn-primary mt-3">
+                <i class="bi bi-plus-circle me-2"></i>Create Task
+            </a>
+        </div>
+    </div>
+}
+
+@section Styles {
+<style>
+    .task-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .task-card:hover {
+        transform: translateY(-2px);
+    }
+
+    .task-card:hover .card {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .task-card.task-completed {
+        opacity: 0.7;
+    }
+
+    .task-card.task-completed .task-title {
+        text-decoration: line-through;
+        color: #6c757d;
+    }
+
+    .priority-indicator {
+        width: 100%;
+    }
+
+    .task-title {
+        color: #212529;
+        font-weight: 600;
+    }
+
+    .task-description {
+        line-height: 1.4;
+    }
+
+    .deadline-info {
+        padding: 0.5rem;
+        background-color: #f8f9fa;
+        border-radius: 0.375rem;
+        display: inline-block;
+    }
+
+    .hover-lift {
+        transition: all 0.2s ease;
+    }
+
+    .task-card .card {
+        border: 1px solid #dee2e6;
+    }
+
+    .task-card.border-danger .card {
+        border-left: 4px solid #dc3545 !important;
+    }
+
+    .btn-group {
+        position: relative;
+        z-index: 10;
+    }
+
+    @@media (max-width: 768px) {
+        .deadline-info {
+            margin-bottom: 1rem !important;
+            text-align: left !important;
+        }
+        
+        .text-md-end {
+            text-align: left !important;
+        }
+
+        .d-inline-flex {
+            display: flex !important;
+        }
+    }
+</style>
+}

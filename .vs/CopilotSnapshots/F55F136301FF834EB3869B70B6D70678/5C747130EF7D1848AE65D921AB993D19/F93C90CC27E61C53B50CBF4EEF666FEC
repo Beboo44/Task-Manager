@@ -1,0 +1,8 @@
+﻿@* Placeholder for Task Index View *@
+@* This will display list of all tasks with filtering and sorting options *@
+
+@{
+    ViewData["Title"] = "My Tasks";
+}
+
+@* TODO: Implement Task List View *@

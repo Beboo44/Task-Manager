@@ -1,0 +1,15 @@
+D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\TaskManager.Business.csproj.AssemblyReference.cache
+D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\TaskManager.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\TaskManager.Business.AssemblyInfoInputs.cache
+D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\TaskManager.Business.AssemblyInfo.cs
+D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\TaskManager.Business.csproj.CoreCompileInputs.cache
+D:\SilverKey\TaskManager\TaskManager.Business\bin\Debug\net8.0\TaskManager.Business.deps.json
+D:\SilverKey\TaskManager\TaskManager.Business\bin\Debug\net8.0\TaskManager.Business.dll
+D:\SilverKey\TaskManager\TaskManager.Business\bin\Debug\net8.0\TaskManager.Business.pdb
+D:\SilverKey\TaskManager\TaskManager.Business\bin\Debug\net8.0\TaskManager.DataAccess.dll
+D:\SilverKey\TaskManager\TaskManager.Business\bin\Debug\net8.0\TaskManager.DataAccess.pdb
+D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\TaskMana.03078404.Up2Date
+D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\TaskManager.Business.dll
+D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\refint\TaskManager.Business.dll
+D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\TaskManager.Business.pdb
+D:\SilverKey\TaskManager\TaskManager.Business\obj\Debug\net8.0\ref\TaskManager.Business.dll

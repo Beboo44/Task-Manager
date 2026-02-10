@@ -1,0 +1,42 @@
+﻿@* Placeholder for Dashboard Index View *@
+@* This will display dashboard with statistics, charts, and recommended tasks *@
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+@* TODO: Implement Dashboard View with:
+   - Total tasks count
+   - Completed tasks count
+   - Pending tasks count
+   - Overdue tasks count
+   - Task completion percentage
+   - Charts/graphs
+   - Upcoming deadlines
+   - Recommended tasks section
+   - Filter options (by category, status, priority)
+   - Sort options (by urgency, priority)
+*@
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="mb-4">
+            <i class="bi bi-speedometer2 me-2"></i>Dashboard
+        </h2>
+        <div class="alert alert-info">
+            <i class="bi bi-info-circle me-2"></i>
+            <strong>Welcome!</strong> Your default categories have been created. Dashboard implementation coming soon.
+        </div>
+        
+        <div class="card">
+            <div class="card-body text-center py-5">
+                <i class="bi bi-tools text-muted" style="font-size: 4rem;"></i>
+                <h4 class="mt-3">Dashboard Under Construction</h4>
+                <p class="text-muted">This feature is being developed. You can start creating tasks!</p>
+                <a asp-controller="Task" asp-action="Index" class="btn btn-primary mt-3">
+                    <i class="bi bi-plus-circle me-2"></i>Go to My Tasks
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

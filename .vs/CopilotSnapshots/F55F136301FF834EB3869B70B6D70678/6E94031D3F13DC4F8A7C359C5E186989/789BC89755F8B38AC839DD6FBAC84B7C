@@ -1,0 +1,9 @@
+﻿// Placeholder for AutoMapper Profile
+// This will contain mapping configurations between entities, DTOs, and ViewModels
+namespace TaskManager.Business.Mappings
+{
+    // TODO: Implement AutoMapper profiles for:
+    // - UserTask <-> TaskDto <-> TaskViewModel
+    // - Category <-> CategoryDto <-> CategoryViewModel
+    // - Dashboard mappings
+}

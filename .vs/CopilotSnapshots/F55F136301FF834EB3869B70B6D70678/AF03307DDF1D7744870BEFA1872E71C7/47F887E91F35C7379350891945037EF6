@@ -1,0 +1,10 @@
+﻿using TaskManager.Business.DTOs;
+
+namespace TaskManager.Business.Services
+{
+    public interface IRecommendationService
+    {
+        System.Threading.Tasks.Task<RecommendedTaskDto?> GetRecommendedTaskAsync(string userId);
+        System.Threading.Tasks.Task<IEnumerable<RecommendedTaskDto>> GetTopRecommendedTasksAsync(string userId, int count = 5);
+    }
+}

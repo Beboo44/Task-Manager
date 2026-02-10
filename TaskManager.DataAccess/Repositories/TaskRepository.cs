@@ -1,0 +1,82 @@
+using Microsoft.EntityFrameworkCore;
+using TaskManager.DataAccess.Data;
+using TaskManager.DataAccess.Models;
+using TaskManager.DataAccess.Enums;
+
+namespace TaskManager.DataAccess.Repositories
+{
+    public class TaskRepository : Repository<UserTask>, ITaskRepository
+    {
+        public TaskRepository(ApplicationDbContext context) : base(context)
+        {
+        }
+
+        public async System.Threading.Tasks.Task<IEnumerable<UserTask>> GetTasksByUserIdAsync(string userId)
+        {
+            return await _dbSet
+                .Include(t => t.Category)
+                .Where(t => t.UserId == userId)
+                .OrderBy(t => t.Deadline)
+                .ToListAsync();
+        }
+
+        public async System.Threading.Tasks.Task<IEnumerable<UserTask>> GetTasksByCategoryAsync(int categoryId, string userId)
+        {
+            return await _dbSet
+                .Include(t => t.Category)
+                .Where(t => t.CategoryId == categoryId && t.UserId == userId)
+                .OrderBy(t => t.Deadline)
+                .ToListAsync();
+        }
+
+        public async System.Threading.Tasks.Task<IEnumerable<UserTask>> GetTasksByStatusAsync(Enums.TaskStatus status, string userId)
+        {
+            return await _dbSet
+                .Include(t => t.Category)
+                .Where(t => t.Status == status && t.UserId == userId)
+                .OrderBy(t => t.Deadline)
+                .ToListAsync();
+        }
+
+        public async System.Threading.Tasks.Task<IEnumerable<UserTask>> GetTasksByPriorityAsync(TaskPriority priority, string userId)
+        {
+            return await _dbSet
+                .Include(t => t.Category)
+                .Where(t => t.Priority == priority && t.UserId == userId)
+                .OrderBy(t => t.Deadline)
+                .ToListAsync();
+        }
+
+        public async System.Threading.Tasks.Task<IEnumerable<UserTask>> GetUpcomingTasksAsync(string userId, int days = 7)
+        {
+            var endDate = DateTime.UtcNow.AddDays(days);
+            return await _dbSet
+                .Include(t => t.Category)
+                .Where(t => t.UserId == userId 
+                    && t.Deadline >= DateTime.UtcNow 
+                    && t.Deadline <= endDate
+                    && t.Status != Enums.TaskStatus.Completed)
+                .OrderBy(t => t.Deadline)
+                .ToListAsync();
+        }
+
+        public async System.Threading.Tasks.Task<IEnumerable<UserTask>> GetOverdueTasksAsync(string userId)
+        {
+            return await _dbSet
+                .Include(t => t.Category)
+                .Where(t => t.UserId == userId 
+                    && t.Deadline < DateTime.UtcNow 
+                    && t.Status != Enums.TaskStatus.Completed)
+                .OrderBy(t => t.Deadline)
+                .ToListAsync();
+        }
+
+        public async System.Threading.Tasks.Task<UserTask?> GetTaskWithDetailsAsync(int id)
+        {
+            return await _dbSet
+                .Include(t => t.Category)
+                .Include(t => t.User)
+                .FirstOrDefaultAsync(t => t.Id == id);
+        }
+    }
+}

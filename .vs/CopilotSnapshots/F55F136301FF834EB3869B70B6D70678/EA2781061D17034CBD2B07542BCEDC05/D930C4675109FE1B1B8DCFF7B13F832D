@@ -1,0 +1,14 @@
+﻿@* Placeholder for Register View *@
+@* This will contain registration form for new users *@
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+@* TODO: Implement Registration Form with:
+   - First Name
+   - Last Name
+   - Email
+   - Password
+   - Confirm Password
+*@

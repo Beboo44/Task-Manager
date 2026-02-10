@@ -1,0 +1,159 @@
+﻿@model IEnumerable<TaskManager.ViewModels.TaskViewModel>
+
+@{
+    ViewData["Title"] = "My Tasks";
+    var currentStatus = ViewBag.CurrentStatus as string;
+    var currentPriority = ViewBag.CurrentPriority as string;
+    var currentCategoryId = ViewBag.CurrentCategoryId as int?;
+    var currentSortBy = ViewBag.CurrentSortBy as string;
+}
+
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h2>
+            <i class="bi bi-list-task me-2"></i>My Tasks
+        </h2>
+    </div>
+    <div class="col-md-4 text-end">
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="bi bi-plus-circle me-2"></i>Create New Task
+        </a>
+    </div>
+</div>
+
+<!-- Filters and Sorting -->
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get" asp-action="Index" class="row g-3">
+            <div class="col-md-3">
+                <label class="form-label">Status</label>
+                <select name="status" class="form-select">
+                    <option value="">All Statuses</option>
+                    <option value="ToDo" selected="@(currentStatus == "ToDo")">To Do</option>
+                    <option value="Pending" selected="@(currentStatus == "Pending")">Pending</option>
+                    <option value="Completed" selected="@(currentStatus == "Completed")">Completed</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Priority</label>
+                <select name="priority" class="form-select">
+                    <option value="">All Priorities</option>
+                    <option value="Low" selected="@(currentPriority == "Low")">Low</option>
+                    <option value="Medium" selected="@(currentPriority == "Medium")">Medium</option>
+                    <option value="High" selected="@(currentPriority == "High")">High</option>
+                    <option value="Critical" selected="@(currentPriority == "Critical")">Critical</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Category</label>
+                <select name="categoryId" class="form-select" asp-items="ViewBag.Categories">
+                    <option value="">All Categories</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Sort By</label>
+                <select name="sortBy" class="form-select">
+                    <option value="">Default</option>
+                    <option value="urgency" selected="@(currentSortBy == "urgency")">Urgency</option>
+                    <option value="priority" selected="@(currentSortBy == "priority")">Priority</option>
+                    <option value="title" selected="@(currentSortBy == "title")">Title</option>
+                    <option value="status" selected="@(currentSortBy == "status")">Status</option>
+                    <option value="category" selected="@(currentSortBy == "category")">Category</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-funnel me-2"></i>Apply Filters
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-x-circle me-2"></i>Clear Filters
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Tasks List -->
+@if (Model.Any())
+{
+    <div class="row">
+        @foreach (var task in Model)
+        {
+            <div class="col-md-6 col-lg-4 mb-3">
+                <div class="card h-100 @(task.IsOverdue ? "border-danger" : "")">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title">@task.Title</h5>
+                            <div>
+                                <span class="@task.PriorityBadgeClass">@task.PriorityText</span>
+                            </div>
+                        </div>
+                        
+                        @if (!string.IsNullOrEmpty(task.Description))
+                        {
+                            <p class="card-text text-muted small">
+                                @(task.Description.Length > 100 ? task.Description.Substring(0, 100) + "..." : task.Description)
+                            </p>
+                        }
+
+                        <div class="mb-2">
+                            <span class="@task.StatusBadgeClass">@task.StatusText</span>
+                            <span class="badge bg-light text-dark">
+                                <i class="bi bi-tag me-1"></i>@task.CategoryName
+                            </span>
+                        </div>
+
+                        <div class="small text-muted mb-3">
+                            <i class="bi bi-calendar-event me-1"></i>
+                            @if (task.IsOverdue)
+                            {
+                                <span class="text-danger fw-bold">Overdue by @Math.Abs(task.DaysUntilDeadline) days</span>
+                            }
+                            else if (task.DaysUntilDeadline == 0)
+                            {
+                                <span class="text-warning fw-bold">Due today</span>
+                            }
+                            else
+                            {
+                                <span>Due in @task.DaysUntilDeadline days</span>
+                            }
+                        </div>
+
+                        <div class="btn-group w-100" role="group">
+                            <a asp-action="Details" asp-route-id="@task.Id" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-eye"></i>
+                            </a>
+                            <a asp-action="Edit" asp-route-id="@task.Id" class="btn btn-sm btn-outline-secondary">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            @if (task.Status != TaskManager.DataAccess.Enums.TaskStatus.Completed)
+                            {
+                                <form asp-action="MarkAsCompleted" asp-route-id="@task.Id" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-sm btn-outline-success" title="Mark as Completed">
+                                        <i class="bi bi-check-circle"></i>
+                                    </button>
+                                </form>
+                            }
+                            <a asp-action="Delete" asp-route-id="@task.Id" class="btn btn-sm btn-outline-danger">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-body text-center py-5">
+            <i class="bi bi-clipboard-check text-muted" style="font-size: 4rem;"></i>
+            <h4 class="mt-3">No Tasks Found</h4>
+            <p class="text-muted">Create your first task to get started!</p>
+            <a asp-action="Create" class="btn btn-primary mt-3">
+                <i class="bi bi-plus-circle me-2"></i>Create Task
+            </a>
+        </div>
+    </div>
+}

@@ -1,0 +1,6 @@
+﻿// Placeholder for IRecommendationService
+// This will contain interface for Task recommendation algorithm
+namespace TaskManager.Business.Services
+{
+    // TODO: Implement IRecommendationService
+}

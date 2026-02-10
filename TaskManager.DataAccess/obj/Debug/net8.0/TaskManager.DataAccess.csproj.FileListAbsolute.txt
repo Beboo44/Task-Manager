@@ -1,0 +1,12 @@
+D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\TaskManager.DataAccess.csproj.AssemblyReference.cache
+D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\TaskManager.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\TaskManager.DataAccess.AssemblyInfoInputs.cache
+D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\TaskManager.DataAccess.AssemblyInfo.cs
+D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\TaskManager.DataAccess.csproj.CoreCompileInputs.cache
+D:\SilverKey\TaskManager\TaskManager.DataAccess\bin\Debug\net8.0\TaskManager.DataAccess.deps.json
+D:\SilverKey\TaskManager\TaskManager.DataAccess\bin\Debug\net8.0\TaskManager.DataAccess.dll
+D:\SilverKey\TaskManager\TaskManager.DataAccess\bin\Debug\net8.0\TaskManager.DataAccess.pdb
+D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\TaskManager.DataAccess.dll
+D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\refint\TaskManager.DataAccess.dll
+D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\TaskManager.DataAccess.pdb
+D:\SilverKey\TaskManager\TaskManager.DataAccess\obj\Debug\net8.0\ref\TaskManager.DataAccess.dll

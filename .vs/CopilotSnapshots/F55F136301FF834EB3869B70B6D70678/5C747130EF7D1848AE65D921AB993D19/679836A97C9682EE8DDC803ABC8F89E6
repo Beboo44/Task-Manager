@@ -1,0 +1,8 @@
+﻿@* Placeholder for Delete Task View *@
+@* This will show task details and confirm deletion *@
+
+@{
+    ViewData["Title"] = "Delete Task";
+}
+
+@* TODO: Implement Delete Task Confirmation *@

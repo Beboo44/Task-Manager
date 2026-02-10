@@ -1,0 +1,185 @@
+using TaskStatus = TaskManager.DataAccess.Enums.TaskStatus;
+using AutoMapper;
+using TaskManager.Business.DTOs;
+using TaskManager.DataAccess.Enums;
+using TaskManager.DataAccess.Models;
+using TaskManager.DataAccess.Repositories;
+
+namespace TaskManager.Business.Services
+{
+    public class TaskService : ITaskService
+    {
+        private readonly ITaskRepository _taskRepository;
+        private readonly IMapper _mapper;
+
+        public TaskService(ITaskRepository taskRepository, IMapper mapper)
+        {
+            _taskRepository = taskRepository;
+            _mapper = mapper;
+        }
+
+
+
+        public async Task<IEnumerable<TaskDto>> GetAllTasksAsync(string userId)
+        {
+            var tasks = await _taskRepository.GetTasksByUserIdAsync(userId);
+            return _mapper.Map<IEnumerable<TaskDto>>(tasks);
+        }
+
+        public async Task<TaskDto?> GetTaskByIdAsync(int id, string userId)
+        {
+            var task = await _taskRepository.GetTaskWithDetailsAsync(id);
+            if (task == null || task.UserId != userId)
+                return null;
+
+            return _mapper.Map<TaskDto>(task);
+        }
+
+        public async Task<TaskDto> CreateTaskAsync(TaskDto taskDto)
+        {
+            var task = _mapper.Map<UserTask>(taskDto);
+            task.CreatedAt = DateTime.UtcNow;
+
+            await _taskRepository.AddAsync(task);
+            await _taskRepository.SaveAsync();
+
+            return _mapper.Map<TaskDto>(task);
+        }
+
+        public async Task<bool> UpdateTaskAsync(TaskDto taskDto)
+        {
+            var existingTask = await _taskRepository.GetByIdAsync(taskDto.Id);
+            if (existingTask == null || existingTask.UserId != taskDto.UserId)
+                return false;
+
+            existingTask.Title = taskDto.Title;
+            existingTask.Description = taskDto.Description;
+            existingTask.Deadline = taskDto.Deadline;
+            existingTask.Priority = taskDto.Priority;
+            existingTask.Status = taskDto.Status;
+            existingTask.CategoryId = taskDto.CategoryId;
+            existingTask.UpdatedAt = DateTime.UtcNow;
+
+            if (taskDto.Status == TaskStatus.Completed && existingTask.CompletedAt == null)
+            {
+                existingTask.CompletedAt = DateTime.UtcNow;
+            }
+
+            await _taskRepository.UpdateAsync(existingTask);
+            await _taskRepository.SaveAsync();
+
+            return true;
+        }
+
+        public async Task<bool> DeleteTaskAsync(int id, string userId)
+        {
+            var task = await _taskRepository.GetByIdAsync(id);
+            if (task == null || task.UserId != userId)
+                return false;
+
+            await _taskRepository.DeleteAsync(task);
+            await _taskRepository.SaveAsync();
+
+            return true;
+        }
+
+        public async Task<IEnumerable<TaskDto>> GetTasksByCategoryAsync(int categoryId, string userId)
+        {
+            var tasks = await _taskRepository.GetTasksByCategoryAsync(categoryId, userId);
+            return _mapper.Map<IEnumerable<TaskDto>>(tasks);
+        }
+
+        public async Task<IEnumerable<TaskDto>> GetTasksByStatusAsync(TaskStatus status, string userId)
+        {
+            var tasks = await _taskRepository.GetTasksByStatusAsync(status, userId);
+            return _mapper.Map<IEnumerable<TaskDto>>(tasks);
+        }
+
+        public async Task<IEnumerable<TaskDto>> GetTasksByPriorityAsync(TaskPriority priority, string userId)
+        {
+            var tasks = await _taskRepository.GetTasksByPriorityAsync(priority, userId);
+            return _mapper.Map<IEnumerable<TaskDto>>(tasks);
+        }
+
+        public async Task<IEnumerable<TaskDto>> GetUpcomingTasksAsync(string userId, int days = 7)
+        {
+            var tasks = await _taskRepository.GetUpcomingTasksAsync(userId, days);
+            return _mapper.Map<IEnumerable<TaskDto>>(tasks);
+        }
+
+        public async Task<IEnumerable<TaskDto>> GetOverdueTasksAsync(string userId)
+        {
+            var tasks = await _taskRepository.GetOverdueTasksAsync(userId);
+            return _mapper.Map<IEnumerable<TaskDto>>(tasks);
+        }
+
+        public async Task<IEnumerable<TaskDto>> GetTasksSortedByUrgencyAsync(string userId)
+        {
+            var tasks = await _taskRepository.GetTasksByUserIdAsync(userId);
+            var sortedTasks = tasks
+                .Where(t => t.Status != TaskStatus.Completed)
+                .OrderBy(t => t.Deadline)
+                .ThenByDescending(t => t.Priority);
+
+            return _mapper.Map<IEnumerable<TaskDto>>(sortedTasks);
+        }
+
+        public async Task<IEnumerable<TaskDto>> GetTasksSortedByPriorityAsync(string userId)
+        {
+            var tasks = await _taskRepository.GetTasksByUserIdAsync(userId);
+            var sortedTasks = tasks
+                .Where(t => t.Status != TaskStatus.Completed)
+                .OrderByDescending(t => t.Priority)
+                .ThenBy(t => t.Deadline);
+
+            return _mapper.Map<IEnumerable<TaskDto>>(sortedTasks);
+        }
+
+        public async Task<bool> MarkTaskAsCompletedAsync(int id, string userId)
+        {
+            return await UpdateTaskStatusAsync(id, userId, TaskStatus.Completed);
+        }
+
+        public async Task<bool> MarkTaskAsInProgressAsync(int id, string userId)
+        {
+            return await UpdateTaskStatusAsync(id, userId, TaskStatus.InProgress);
+        }
+
+        public async Task<bool> MarkTaskAsToDoAsync(int id, string userId)
+        {
+            return await UpdateTaskStatusAsync(id, userId, TaskStatus.ToDo);
+        }
+
+        public async Task<int> GetTaskCountByStatusAsync(TaskStatus status, string userId)
+        {
+            var tasks = await _taskRepository.GetTasksByStatusAsync(status, userId);
+            return tasks.Count();
+        }
+
+        public async Task<int> GetTaskCountByPriorityAsync(TaskPriority priority, string userId)
+        {
+            var tasks = await _taskRepository.GetTasksByPriorityAsync(priority, userId);
+            return tasks.Count();
+        }
+
+        private async Task<bool> UpdateTaskStatusAsync(int id, string userId, TaskStatus newStatus)
+        {
+            var task = await _taskRepository.GetByIdAsync(id);
+            if (task == null || task.UserId != userId)
+                return false;
+
+            task.Status = newStatus;
+            task.UpdatedAt = DateTime.UtcNow;
+
+            if (newStatus == TaskStatus.Completed)
+                task.CompletedAt = DateTime.UtcNow;
+            else if (task.Status != TaskStatus.Completed)
+                task.CompletedAt = null;
+
+            await _taskRepository.UpdateAsync(task);
+            await _taskRepository.SaveAsync();
+
+            return true;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+﻿@* Placeholder for Access Denied View *@
+@* This will show when user tries to access unauthorized resource *@
+
+@{
+    ViewData["Title"] = "Access Denied";
+}
+
+@* TODO: Implement Access Denied message *@

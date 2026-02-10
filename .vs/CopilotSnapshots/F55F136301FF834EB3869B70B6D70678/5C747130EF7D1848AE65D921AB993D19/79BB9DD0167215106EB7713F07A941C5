@@ -1,0 +1,6 @@
+﻿// Placeholder for CategoryDto
+// This will contain Data Transfer Object for Category entity
+namespace TaskManager.Business.DTOs
+{
+    // TODO: Implement CategoryDto
+}

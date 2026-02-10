@@ -1,0 +1,15 @@
+﻿// Placeholder for Data Seeding
+// This will contain initial data seeding logic for the database
+using TaskManager.DataAccess.Data;
+using TaskManager.DataAccess.Models;
+
+namespace TaskManager.DataAccess.Data
+{
+    public static class DbInitializer
+    {
+        // TODO: Implement database initialization and seeding
+        // - Seed default categories
+        // - Create admin user (optional)
+        // - Any other initial data
+    }
+}
